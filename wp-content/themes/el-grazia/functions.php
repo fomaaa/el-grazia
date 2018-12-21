@@ -163,19 +163,21 @@ add_action( 'widgets_init', 'el_grazia_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-function el_grazia_scripts() {
-	wp_enqueue_style( 'el-grazia-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'el-grazia-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+// REMOVE EMOJI ICONS
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 
-	wp_enqueue_script( 'el-grazia-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+function my_jquery_enqueue() {
+   wp_deregister_script('jquery');
 }
-add_action( 'wp_enqueue_scripts', 'el_grazia_scripts' );
 
+function my_deregister_scripts(){
+  wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'my_deregister_scripts' );
 /**
  * Implement the Custom Header feature.
  */
