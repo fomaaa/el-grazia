@@ -9,10 +9,10 @@ function add_taxonomy_seminar() {
 
 			'labels' => array(
 				'name' => 'Семинары',
-				'singular_name' => 'Семинары',
-				'search_items' =>  'Найти Семинары',
-				'popular_items' => 'Семинары',
-				'all_items' => 'Семинары',
+				'singular_name' => 'Категорию',
+				'search_items' =>  'Найти Категорию',
+				'popular_items' => 'Категорию',
+				'all_items' => 'Категорию',
 				'parent_item' => null,
 				'parent_item_colon' => null,
 				'edit_item' => 'Редактировать категорию', 
@@ -156,54 +156,50 @@ add_action( 'init', 'NewsPostType', 100 );
 
 
 //Бренды
-function add_taxonomy_brands() {		
-	register_taxonomy('brands',
-		array('post'),
-		array(
-			'hierarchical' => true,
+// function add_taxonomy_brands() {		
+// 	register_taxonomy('brands',
+// 		array('post'),
+// 		array(
+// 			'hierarchical' => true,
 
-			'labels' => array(
-				'name' => 'Бренды',
-				'singular_name' => 'Бренды',
-				'search_items' =>  'Найти Бренды',
-				'popular_items' => 'Бренды',
-				'all_items' => 'Бренды',
-				'parent_item' => null,
-				'parent_item_colon' => null,
-				'edit_item' => 'Редактировать категорию', 
-				'update_item' => 'Обновить категорию',
-				'add_new_item' => 'Добавить новую категорию',
-				'new_item_name' => 'Название новой категории',
-				'separate_items_with_commas' => 'Разделяйте категории запятыми',
-				'add_or_remove_items' => 'Добавить или удалить категорию',
-				'choose_from_most_used' => 'Выбрать из наиболее часто используемых категорий',
-				'menu_name' => 'Категории'
-			),
-			'public' => true, 
-			/* каждый может использовать таксономию, либо
-			только администраторы, по умолчанию - true */
-			'show_in_nav_menus' => true,
-			/* добавить на страницу создания меню */
-			'show_ui' => true,
-			/* добавить интерфейс создания и редактирования */
-			'show_tagcloud' => true,
-			/* нужно ли разрешить облако тегов для этой таксономии */
-			'update_count_callback' => '_update_post_term_count',
-			/* callback-функция для обновления счетчика $object_type */
-			'query_var' => true,
-			/* разрешено ли использование query_var, также можно 
-			указать строку, которая будет использоваться в качестве 
-			него, по умолчанию - имя таксономии */
-			'rewrite' => array(
-			/* настройки URL пермалинков */
-				'slug' => 'brands', // ярлык
-				'hierarchical' => true, // разрешить вложенность
+// 			'labels' => array(
+// 				'name' => 'Бренды',
+// 				'singular_name' => 'Категории',
+// 				'search_items' =>  'Найти Категорию',
+// 				'popular_items' => 'Категории',
+// 				'all_items' => 'Категории',
+// 				'parent_item' => null,
+// 				'parent_item_colon' => null,
+// 				'edit_item' => 'Редактировать категорию', 
+// 				'update_item' => 'Обновить категорию',
+// 				'add_new_item' => 'Добавить новую категорию',
+// 				'new_item_name' => 'Название новой категории',
+// 				'separate_items_with_commas' => 'Разделяйте категории запятыми',
+// 				'add_or_remove_items' => 'Добавить или удалить категорию',
+// 				'choose_from_most_used' => 'Выбрать из наиболее часто используемых категорий',
+// 				'menu_name' => 'Категории'
+// 			),
+// 			'public' => true, 
 
-			),
-		)
-	);
-}
-add_action( 'init', 'add_taxonomy_brands', 100 );
+// 			'show_in_nav_menus' => true,
+
+// 			'show_ui' => true,
+
+// 			'show_tagcloud' => true,
+
+// 			'update_count_callback' => '_update_post_term_count',
+
+// 			'query_var' => true,
+
+// 			'rewrite' => array(
+// 				'slug' => 'brands', // ярлык
+// 				'hierarchical' => true, // разрешить вложенность
+
+// 			),
+// 		)
+// 	);
+// }
+// add_action( 'init', 'add_taxonomy_brands', 100 );
 
 function BrandsPostType() {
 
