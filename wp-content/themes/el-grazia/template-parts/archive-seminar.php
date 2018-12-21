@@ -66,7 +66,7 @@
 				                                <div class="infoItem">
 				                                  <div class="infoItem__icon">
 				                                    <svg class="icon icon-price">
-				                                      <use xlink:href="img/sprite.svg#icon-price"></use>
+				                                      <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-price"></use>
 				                                    </svg>
 				                                  </div>
 				                                  <div class="infoItem__value"><?php the_field('price') ?> ₽</div>
@@ -76,7 +76,7 @@
 				                                <div class="infoItem">
 				                                  <div class="infoItem__icon">
 				                                    <svg class="icon icon-clock">
-				                                      <use xlink:href="img/sprite.svg#icon-clock"></use>
+				                                      <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-clock"></use>
 				                                    </svg>
 				                                  </div>
 				                                  <div class="infoItem__value"><?php the_field('time') ?></div>

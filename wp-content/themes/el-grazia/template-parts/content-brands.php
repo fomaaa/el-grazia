@@ -81,9 +81,11 @@
           			?>
                 </article>
                 <div class="brands__bottom">
-                  <a href="#" class="btn btn--primary">
+                  <?php  if(get_field('product')) : ?>
+                  <a href="<?php echo get_term_link(get_field('product')) ?>" class="btn btn--primary">
                     <span>Смотреть продукцию</span>
                   </a>
+                  <?php endif; ?>
                   <a href="<?php echo get_page_link('296') ?>/?type=brand&id=<?php echo get_the_ID(); ?>" class="btn btn--secondary">
                     <span>Узнать стоимость</span>
                   </a>

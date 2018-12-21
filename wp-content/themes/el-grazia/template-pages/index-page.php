@@ -213,48 +213,51 @@
             	<?php 
             		$terms = get_the_tags($item->ID);
             	 ?>
-	              <div class="grid__item">
-	                <div class="card card--event">
-	                  <a href="<?php echo get_permalink($item->ID) ?>" class="card__link"></a>
-	                  <?php if (!empty($terms[0])) : ?><div class="card__category badge badge--primary"><?php echo $terms[0]->name; ?></div><?php endif; ?>
-	                  <div class="card__photo" style="background-image: url('<?php echo get_the_post_thumbnail_url($item, 'medium') ?>');"></div>
-	                  <div class="card__body">
-	                    <div class="card__top">
-	                      <div class="card__dates"> <?php the_field("dates", $item->ID); ?></div>
-	                      <div class="card__title"><?php echo $item->post_title ?></div>
-	                    </div>
-	                    <div class="card__bottom">
-	                      <div class="card__info">
-	                        <ul>
-	                          <li>
-	                            <div class="infoItem">
-	                              <div class="infoItem__icon">
-	                                <svg class="icon icon-price">
-	                                  <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-price"></use>
-	                                </svg>
-	                              </div>
-	                              <div class="infoItem__value"><?php the_field("price", $item->ID); ?> ₽</div>
-	                            </div>
-	                          </li>
-	                          <li>
-	                            <div class="infoItem">
-	                              <div class="infoItem__icon">
-	                                <svg class="icon icon-clock">
-	                                  <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-clock"></use>
-	                                </svg>
-	                              </div>
-	                              <div class="infoItem__value"><?php the_field("time", $item->ID); ?></div>
-	                            </div>
-	                          </li>
-	                        </ul>
-	                      </div>
-	                      <div class="card__button">
-	                        <a href="<?php echo get_page_link('296') ?>?type=registration&id=<?php echo $item->ID  ?>" class="btn btn--secondary btn--sm">Зарегистрироваться</a>
-	                      </div>
-	                    </div>
-	                  </div>
-	                </div>
-	              </div>
+                <div class="grid__item">
+                  <div class="card card--event">
+                    <a href="<?php echo get_permalink($item->ID) ?>" class="card__link"></a>
+                    <div class="card__photo" style="background-image: url('<?php echo get_the_post_thumbnail_url($item, 'medium') ?>');"></div>
+                    <div class="card__body">
+                      <div class="card__top">
+                        <div class="card__dates"><?php the_field("dates", $item->ID); ?></div>
+                        <div class="card__title"><?php echo $item->post_title ?></div>
+                      </div>
+                      <div class="card__bottom">
+                        <div class="card__info">
+                          <ul>
+                            <li>
+                              <div class="infoItem">
+                                <div class="infoItem__icon">
+                                  <svg class="icon icon-price">
+                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-price"></use>
+                                  </svg>
+                                </div>
+                                <div class="infoItem__value"><?php the_field("price", $item->ID); ?> ₽</div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="infoItem">
+                                <div class="infoItem__icon">
+                                  <svg class="icon icon-clock">
+                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-clock"></use>
+                                  </svg>
+                                </div>
+                                <div class="infoItem__value"><?php the_field('time', $item->ID) ?></div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="card__author">
+                          <div class="authorEvent">  <?php the_field("lector", $item->ID); ?> </div>
+                        </div>
+                        <div class="card__button">
+                          <a href="<?php echo get_permalink($item->ID) ?>" class="btn btn--gray text--center">Подробнее</a>
+                          <a href="<?php echo get_page_link('296') ?>?type=seminar&id=<?php echo $item->ID ?>" class="btn btn--primary btn--sm">Зарегистрироваться</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             	<?php endforeach; endif; ?>
             </div>
             <div class="gridSlider swiper-container">

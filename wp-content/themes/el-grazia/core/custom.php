@@ -95,7 +95,7 @@ function SeminarPostType() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'post',
 		'menu_icon' => 'dashicons-format-chat',
-		'rewrite' => array('slug' => 'seminar','with_front' => false),
+		'rewrite' => array('slug' => 'seminars','with_front' => false),
 	);
 	register_post_type( 'seminar', $args );
 }

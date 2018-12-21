@@ -26,9 +26,10 @@
         <div class="section section--newsInner">
           <div class="container section__inner">
             <article>
-              <h1>Итоги interCHARM Весна - 2018</h1>
+              <h1><?php the_title(); ?></h1>
 				<?php 	the_content(); ?>
             </article>
           </div>
         </div>
+
       </div>
