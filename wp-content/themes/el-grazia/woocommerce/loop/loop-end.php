@@ -22,11 +22,11 @@ if ( ! defined( 'ABSPATH' ) ) {
       $category = single_term_title("", false);;
       $current_cat = get_terms('hierarchical=1&hide_empty=0&taxonomy=product_cat&slug='. $category);
 ?>
+              </div>
                 <div class="grid__bottom">
                 	<?php if ($current_cat[0]->count > 6) : ?>
                   <a href="#" id="load_more" data-category="<?php echo $current_cat[0]->term_id ?>" class="btn btn--primary"><span>Показать еще</span></a>
               	<?php endif; ?>
                   <a href="<?php echo get_page_link('296') ?>?type=price" class="btn btn--secondary"><span>Узнать стоимость</span></a>
                 </div>
-              </div>
             </div>

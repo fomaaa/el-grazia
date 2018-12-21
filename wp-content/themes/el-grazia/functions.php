@@ -336,7 +336,7 @@ function toolset_fix_custom_posts_per_page( $query_string ){
     $post_types_to_fix = array(
         array(
             'post_type' => 'news',
-            'posts_per_page' => 12
+            'posts_per_page' => 3
         ),
     );
  
@@ -398,7 +398,7 @@ function change_post_menu_label() {
  add_action( 'admin_menu', 'change_post_menu_label' );
 
 
- add_action( 'wp_ajax_nopriv_load_more', 'load_more');
+add_action( 'wp_ajax_nopriv_load_more', 'load_more');
 add_action( 'wp_ajax_load_more', 'load_more');
 
 function load_more() {
@@ -432,16 +432,18 @@ function load_more() {
 		the_post();
 		// $terms = get_the_terms( get_the_ID(), 'product_cat' );
 		global $product;
-		$html .= '<div class="card card--good">';
-		$html .= '<a href="'. get_the_permalink() .'" class="card__link"></a>';
-		$html .= '<div class="card__photo">';
-		$html .= woocommerce_get_product_thumbnail();
-		$html .= '</div>';
-		$html .= '<div class="card__body">';
-		$html .= ' <div class="card__title">'. get_the_title() .'</div>';
-		$html .= '<div class="card__subtitle">'. get_field('subtitle') .'</div>';
-		$html .= '</div>';
-		$html .= '</div>';
+		$html .= '<div class="grid__item">';
+			$html .= '<div class="card card--good">';
+				$html .= '<a href="'. get_the_permalink() .'" class="card__link"></a>';
+				$html .= '<div class="card__photo">';
+				$html .= woocommerce_get_product_thumbnail();
+				$html .= '</div>';
+				$html .= '<div class="card__body">';
+				$html .= ' <div class="card__title">'. get_the_title() .'</div>';
+				$html .= '<div class="card__subtitle">'. get_field('subtitle') .'</div>';
+				$html .= '</div>';
+				$html .= '</div>';
+			$html .= '</div>';
 		$html .= '</div>';
 		$count ++;
 	endwhile; endif;
@@ -451,4 +453,55 @@ function load_more() {
 		'html' => $html,
 		'count' => $count
 	)));
+}
+
+ add_action( 'wp_ajax_nopriv_load_category', 'load_category');
+add_action( 'wp_ajax_load_category', 'load_category');
+
+function load_category() {
+	$category = $_POST['term_id'];
+	$current_cat = get_term_by('term_taxonomy_id', $category);
+	$current_cat->count > 6 ? $next_page = 1 : $next_page = 0 ;
+
+	$data = array(
+		'title_category'   => $current_cat->name,
+		'id_category'      => $category,
+		'url_category'     => get_term_link($current_cat),
+		'counter_category' => $current_cat->count,
+		'nextPage'         => $next_page,
+	);
+
+    $args = array(
+	    'post_type'             => 'product',
+	    'posts_per_page'  		=> 6,
+	    'tax_query' 			=> array(
+	        array(
+	            'taxonomy'      => 'product_cat',
+	            'field'			=> 'term_id',
+	            'terms'         => $category,
+	            'operator'      => 'IN'
+	        ),
+	    )
+	);
+	$posts = query_posts($args);
+
+	$count = 0;
+	if ( have_posts() ) : while ( have_posts() ) :
+		the_post();
+		// $terms = get_the_terms( get_the_ID(), 'product_cat' );
+		global $product;
+		$data['body'][$count]['photo'] = get_the_post_thumbnail_url();
+		$data['body'][$count]['title'] = get_the_title();
+		$data['body'][$count]['subtitle'] = get_field('subtitle');
+		$data['body'][$count]['link'] =  get_the_permalink();
+
+
+
+		$count ++;
+	endwhile; endif;
+	wp_reset_query();
+
+	
+
+	exit(json_encode($data));
 }

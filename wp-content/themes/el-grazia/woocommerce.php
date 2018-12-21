@@ -88,14 +88,14 @@
                     foreach ($prod_terms as $prod_term) :
                   ?>
                     <div class="subCategory">
-                      <a href="javascript:void(0)" class="subCategory__title" role="button"> <?php echo $prod_term->name ?> </a>
+                      <a href="javascript:void(0)" data-id="<?php echo $prod_term->term_id; ?>" class="subCategory__title" role="button"> <?php echo $prod_term->name ?> </a>
                       <ul>
                         <?php $child_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $prod_term->term_id) ; ?>
                         <?php foreach ($child_terms as $child_term) : 
                           $lastChilds = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $child_term->term_id);
                         ?>
                         <li>
-                          <a href="<?php echo get_term_link($child_term) ?>" class=""><?php echo $child_term->name ?></a>
+                          <a href="<?php echo get_term_link($child_term->term_id) ?>" data-id="<?php echo $child_term->term_id; ?>" class=""><?php echo $child_term->name ?></a>
                         </li>
                         <?php endforeach; ?>
                       </ul>
@@ -110,7 +110,7 @@
                   ?>
                     <div class="filter__item">
                       <div class="category">
-                        <a href="javascript:void(0);" role="button" class="category__title <?php if($prod_term->term_id == $parent_cat_id) echo 'is-active'; ?>">
+                        <a href="" role="button" data-id="<?php echo $prod_term->term_id ?>" class="category__title <?php if($prod_term->term_id == $parent_cat_id) echo 'is-active'; ?>">
                           <span><?php echo  $prod_term->name ?></span>
                           <span class="arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10 6" width="10px" height="6px">
@@ -123,7 +123,7 @@
                           $lastChilds = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $child_term->term_id);
                         ?>
                         <div class="subCategory" style="<?php if($prod_term->term_id == $parent_cat_id) echo 'display: block'; ?>">
-                          <a href="<?php if (!$lastChilds) : echo  get_term_link($child_term); else : echo 'javascript:void(0)'; endif; ?>)" class="subCategory__title <?php if($child_term->term_id == $current_cat[0]->parent) echo 'is-active'; ?>" role="button"> <?php echo $child_term->name ?> </a>
+                          <a href="<?php if (!$lastChilds) : echo  get_term_link($child_term); else : echo 'javascript:void(0)'; endif; ?>)" class="subCategory__title <?php if($child_term->term_id == $current_cat[0]->parent) echo 'is-active'; ?>" role="button" data-id="<?php echo $child_term->term_id ?>"> <?php echo $child_term->name ?> </a>
                           <?php if($lastChilds) : ?>
                           <ul  style="<?php if($child_term->term_id == $current_cat[0]->parent) echo 'display: block'; ?>" >
                             <?php 
@@ -131,7 +131,7 @@
                               foreach ($lastChilds as $lastChild) :
                             ?>
                             <li>
-                              <a href="<?php echo get_term_link($lastChild) ?>" role="button"><?php echo $lastChild->name; ?></a>
+                              <a data-id="<?php echo $lastChild->term_id ?>" href="<?php echo get_term_link($lastChild) ?>" role="button"><?php echo $lastChild->name; ?></a>
                             </li>
                             <?php endforeach; ?>
                           </ul>

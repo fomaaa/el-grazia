@@ -10,3 +10,29 @@
 
 2018-12-21T12:18:26+00:00 CRITICAL syntax error, unexpected ';', expecting ')' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 420
 
+2018-12-21T14:48:44+00:00 CRITICAL syntax error, unexpected '?>' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 98
+
+2018-12-21T14:48:45+00:00 CRITICAL syntax error, unexpected '?>' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 98
+
+2018-12-21T14:48:58+00:00 CRITICAL syntax error, unexpected '?>' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 98
+
+2018-12-21T14:58:00+00:00 CRITICAL syntax error, unexpected 'exit' (T_EXIT) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 507
+
+2018-12-21T15:23:10+00:00 CRITICAL Uncaught Error: Call to undefined function get_title() in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php:494
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\class-wp-hook.php(286): load_category('')
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 C:\OSPanel\domains\grazia.loc\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\OSPanel\domains\grazia.loc\wp-admin\admin-ajax.php(115): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 494
+
+2018-12-21T15:23:29+00:00 CRITICAL Uncaught Error: Call to undefined function get_title() in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php:494
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\class-wp-hook.php(286): load_category('')
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 C:\OSPanel\domains\grazia.loc\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 C:\OSPanel\domains\grazia.loc\wp-admin\admin-ajax.php(115): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 494
+

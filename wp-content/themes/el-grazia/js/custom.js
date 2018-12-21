@@ -1,10 +1,13 @@
 $(document).ready(function(){
-	var current_sub_page = 1;
+	
 	if ($('.form--registration').length >  0 ) {
 		if (form_title) {
 			$('[name="hidden-page"]').val(form_title);
 		}
 	}
+
+
+	var current_sub_page = 1;
 	$('#load_more').on('click', function(e){
 		e.preventDefault();
 		var data = {
@@ -27,5 +30,19 @@ $(document).ready(function(){
 	})
 
 
+	$('.filter__item a, .filter__item a > span').on('click', function(){
+		var id = $(this).data('id');
+
+		var data = {
+			'action' : 'load_category',
+			'term_id' : id, 
+		}
+
+		$.post( ajax_url, data, function(response) {
+			if (response) {
+				console.log(response);
+			}
+        });		
+	})
 
 });
