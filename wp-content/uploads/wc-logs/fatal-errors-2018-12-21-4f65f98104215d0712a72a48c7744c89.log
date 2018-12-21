@@ -1,0 +1,12 @@
+2018-12-21T11:41:42+00:00 CRITICAL syntax error, unexpected '' );' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ')' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 371
+
+2018-12-21T12:16:52+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 416
+
+2018-12-21T12:17:07+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 416
+
+2018-12-21T12:17:22+00:00 CRITICAL syntax error, unexpected ')' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 414
+
+2018-12-21T12:18:23+00:00 CRITICAL syntax error, unexpected ';', expecting ')' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 420
+
+2018-12-21T12:18:26+00:00 CRITICAL syntax error, unexpected ';', expecting ')' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php на строке 420
+

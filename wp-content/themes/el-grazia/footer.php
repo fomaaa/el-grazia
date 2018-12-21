@@ -176,6 +176,9 @@
     </div>
     <!-- END content -->
     <script>
+      var ajax_url = '<?php echo admin_url('admin-ajax.php'); ?>';
+    </script>
+    <script>
       var centerOffice = {
         coords: [<?php the_field('c_coord', '39') ?>]
       };
@@ -188,6 +191,7 @@
     <script src="http://api-maps.yandex.ru/2.0/?lang=ru-RU&load=package.full"></script>
     <?php wp_footer(); ?>
     <script src="<?php echo get_template_directory_uri() ?>/js/app.js"></script>
+    <script src="<?php echo get_template_directory_uri() ?>/js/custom.js"></script>
     <script>
       (function()
       {

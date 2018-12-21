@@ -362,29 +362,91 @@ add_filter( 'request', 'toolset_fix_custom_posts_per_page' , 999);
 
 		
 
-add_action('admin_menu','yoursite_admin_menu');
+add_action('admin_menu','set_admin_menu');
 
-function yoursite_admin_menu() {
-		remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=seminar' );
-		remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=brands' );
+function set_admin_menu() {
+	remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=seminar' );
+	remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=brands' );
+	remove_submenu_page( 'edit.php', 'edit.php?post_type=shop_order' );
+	remove_menu_page('edit.php?post_type=acf-field-group');
+	remove_menu_page( 'edit-comments.php' ); 
+	remove_menu_page( 'tools.php' ); 
+	remove_menu_page( 'themes.php' ); 
+	remove_menu_page( 'plugins.php' ); 
+	remove_menu_page('edit.php?post_type=shop_order'); 
 }
 
 
 
-// $your_taxonomy='product_cat';
 
-function my_Categ_tree($TermName='', $termID, $separator='', $parent_shown=true ){
-    $args = 'hierarchical=1&taxonomy='.$TermName.'&hide_empty=0&orderby=id&parent=';
-            if ($parent_shown) {$term=get_term($termID , $TermName); $output=$separator.$term->name.'('.$term->term_id.')<br/>'; $parent_shown=false;}
-    $separator .= '-';  
-    $terms = get_terms($TermName, $args . $termID);
-    if(count($terms)>0){
-        foreach ($terms as $term) {
-            //$selected = ($cat->term_id=="22") ? " selected": "";
-            //$output .=  '<option value="'.$category->term_id.'" '.$selected .'>'.$separator.$category->cat_name.'</option>';
-            $output .=  $separator.$term->name.'('.$term->term_id.')<br/>';
-            $output .=  my_Categ_tree($TermName, $term->term_id, $separator, $parent_shown);
-        }
-    }
-    return $output;
+
+add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+
+function new_loop_shop_per_page( $cols ) {
+
+  $cols = 6;
+  return $cols;
+}
+
+function change_post_menu_label() {
+    global $menu;
+    unset($menu['55.5']);
+}
+
+ add_action( 'admin_menu', 'change_post_menu_label' );
+
+
+ add_action( 'wp_ajax_nopriv_load_more', 'load_more');
+add_action( 'wp_ajax_load_more', 'load_more');
+
+function load_more() {
+
+	$current = $_POST['current'];
+
+	$category = $_POST['term_id'];
+
+    $args = array(
+	    'post_type'             => 'product',
+	    'posts_per_page'  		=> 6,
+	    'offset' 				=> $current * 6,
+	    'paged' 				=> $current + 1,
+	    'tax_query'				=> array(
+	        array(
+	            'taxonomy'      => 'product_cat',
+	            'field' 		=> 'term_id',
+	            'terms'         => $category,
+	            'operator'      => 'IN'
+	        ),
+	    ),
+	);
+
+
+
+	$posts = query_posts($args);
+	$html ='';
+	$count = 0;
+
+	if ( have_posts() ) : while ( have_posts() ) :
+		the_post();
+		// $terms = get_the_terms( get_the_ID(), 'product_cat' );
+		global $product;
+		$html .= '<div class="card card--good">';
+		$html .= '<a href="'. get_the_permalink() .'" class="card__link"></a>';
+		$html .= '<div class="card__photo">';
+		$html .= woocommerce_get_product_thumbnail();
+		$html .= '</div>';
+		$html .= '<div class="card__body">';
+		$html .= ' <div class="card__title">'. get_the_title() .'</div>';
+		$html .= '<div class="card__subtitle">'. get_field('subtitle') .'</div>';
+		$html .= '</div>';
+		$html .= '</div>';
+		$html .= '</div>';
+		$count ++;
+	endwhile; endif;
+	wp_reset_query();
+
+	exit(json_encode(array(
+		'html' => $html,
+		'count' => $count
+	)));
 }

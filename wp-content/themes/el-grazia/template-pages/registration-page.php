@@ -23,41 +23,21 @@
             </div>
             <div class="registration">
               <?php echo do_shortcode('[contact-form-7 id="299" title="Форма регистрации" html_class="form form--registration"]') ?>
-<!--               <form action="/" class="form form--registration">
-                <div class="form__field form__field--select">
-                  <select name="" class="js-select ">
-                    <option value="" selected disabled>Роль пользователя*</option>
-                    <option value="Модель">Модель</option>
-                    <option value="Модель 2">Модель 2</option>
-                    <option value="Модель 3">Модель 3</option>
-                  </select>
-                </div>
-                <div class="form__field">
-                  <input type="text" class="input " placeholder="ФИО*" />
-                </div>
-                <div class="form__field">
-                  <input type="text" class="input js-mask-phone" placeholder="Телефон*" />
-                </div>
-                <div class="form__field">
-                  <input type="text" class="input " placeholder="E-mail*" />
-                </div>
-                <div class="form__field">
-                  <input type="text" class="input " placeholder="Как узнали об Обучающем центре?" />
-                </div>
-                <div class="form__field form__field--textarea">
-                  <textarea name="message" class="textarea" placeholder="Комментарий"></textarea>
-                </div>
-                <div class="form__bottom">
-                  <div class="form__button">
-                    <button type="button" class="btn btn--primary">
-                      <span>Зарегистрироваться</span>
-                    </button>
-                  </div>
-                  <div class="form__rules"> Нажимая на кнопку Зарегистрироваться<br> я даю Согласие на <a href="#">обработку персональных данных</a>
-                  </div>
-                  <div class="form__rules"> * помечены поля для обязательного<br> заполнения </div>
-                </div>
-              </form> -->
+              <?php 
+                if (!empty($_GET)) {
+                  if (!empty($_GET['id'])) {
+                    $title = get_the_title($_GET['id']);
+
+                  } else if (!empty($_GET['type'])) {
+                    if ($_GET['type'] == 'cooperation') {
+                      $title = 'Сотрудничество';
+                    }
+                  }
+                }
+              ?>
+              <?php if ($title) : ?>
+                <script>var form_title = '<?php echo $title; ?>';</script>
+              <?php endif; ?>
             </div>
           </div>
         </div>
