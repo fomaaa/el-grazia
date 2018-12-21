@@ -1,0 +1,85 @@
+2018-12-20T10:47:11+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function WC_Template_Loader::unsupported_theme_title_filter(), 1 passed in C:\OSPanel\domains\grazia.loc\wp-includes\class-wp-hook.php on line 286 and exactly 2 expected in C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\class-wc-template-loader.php:399
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\class-wp-hook.php(286): WC_Template_Loader::unsupported_theme_title_filter('LeedFrost Cream...')
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\plugin.php(203): WP_Hook->apply_filters('LeedFrost Cream...', Array)
+#2 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php(401): apply_filters('the_title', 'LeedFrost Cream...')
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\content-news.php(13): get_hansel_and_gretel_breadcrumbs()
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(647): load_ в C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\class-wc-template-loader.php на строке 399
+
+2018-12-20T10:48:45+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function WC_Template_Loader::unsupported_theme_title_filter(), 1 passed in C:\OSPanel\domains\grazia.loc\wp-includes\class-wp-hook.php on line 286 and exactly 2 expected in C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\class-wc-template-loader.php:399
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\class-wp-hook.php(286): WC_Template_Loader::unsupported_theme_title_filter('LeedFrost Cream...')
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\plugin.php(203): WP_Hook->apply_filters('LeedFrost Cream...', Array)
+#2 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\functions.php(401): apply_filters('the_title', 'LeedFrost Cream...')
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\content-news.php(64): get_hansel_and_gretel_breadcrumbs()
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(647): load_ в C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\class-wc-template-loader.php на строке 399
+
+2018-12-20T11:49:49+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 36
+
+2018-12-20T11:49:50+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 36
+
+2018-12-20T11:55:42+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_the_terms(), 1 passed in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-pages\index-page.php on line 106 and exactly 2 expected in C:\OSPanel\domains\grazia.loc\wp-includes\category-template.php:1183
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-pages\index-page.php(106): get_the_terms('product_cat')
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#2 C:\OSPanel\domains\grazia.loc\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#3 C:\OSPanel\domains\grazia.loc\index.php(17): require('C:\\OSPanel\\doma...')
+#4 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-includes\category-template.php на строке 1183
+
+2018-12-20T20:06:58+00:00 CRITICAL syntax error, unexpected '?>' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 133
+
+2018-12-20T20:11:24+00:00 CRITICAL syntax error, unexpected 'foreach' (T_FOREACH) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 140
+
+2018-12-20T20:14:51+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 139
+
+2018-12-20T20:15:31+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE), expecting ',' or ';' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 139
+
+2018-12-20T20:15:37+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 151
+
+2018-12-20T20:28:54+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 119
+
+2018-12-20T21:28:43+00:00 CRITICAL syntax error, unexpected ';' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 53
+
+2018-12-20T21:32:24+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php на строке 158
+
+2018-12-20T22:08:20+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_excerpt() in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce\content-product.php:36
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require()
+#1 C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\wc-core-functions.php(178): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\wc-template-functions.php(893): wc_get_template_part('content', 'product')
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php(149): woocommerce_content()
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\grazia.loc\index.php(17): require('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce\content-product.php на строке 36
+
+2018-12-20T22:09:03+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce\content-product.php:36
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require()
+#1 C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\wc-core-functions.php(178): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\wc-template-functions.php(893): wc_get_template_part('content', 'product')
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php(149): woocommerce_content()
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\grazia.loc\index.php(17): require('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce\content-product.php на строке 36
+
+2018-12-20T22:09:10+00:00 CRITICAL Uncaught Error: Call to undefined function get_excerpt() in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce\content-product.php:36
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require()
+#1 C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\wc-core-functions.php(178): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\grazia.loc\wp-content\plugins\woocommerce\includes\wc-template-functions.php(893): wc_get_template_part('content', 'product')
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce.php(149): woocommerce_content()
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\grazia.loc\index.php(17): require('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\woocommerce\content-product.php на строке 36
+
+2018-12-20T23:20:57+00:00 CRITICAL syntax error, unexpected 'foreach' (T_FOREACH) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-pages\index-page.php на строке 106
+
