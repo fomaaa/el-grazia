@@ -1,0 +1,186 @@
+.section--company {
+	padding: 20px 0 0;
+
+	@include r($md-breakpoint) {
+		padding: 10px 0 0;
+	}
+
+	@include r($xs-breakpoint) {
+		padding: 3px 0 0;
+	}
+}
+
+.company {
+
+	&__subtitle:not(:first-child) {
+		margin-top: 20px;
+
+		@include r($md-breakpoint) {
+			margin-top: 12px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 5px;
+		}
+	}
+}
+
+.company__head {
+	display: flex;
+	justify-content: space-between;
+
+	.company__right {
+		padding-top: 10px;
+
+		@include r($md-breakpoint) {
+			padding-top: 3px;
+		}
+	}
+}
+
+.companyGallery {
+	margin-top: 55px;
+
+	@include r($md-breakpoint) {
+		margin-top: 34px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 24px;
+	}
+}
+
+.companyGallery__main {
+
+	.swiper-slide {
+		overflow: hidden;
+	}
+
+	.photo {
+		height: 552px;
+		@include cover();
+		width: 100%;
+
+		@include r($md-breakpoint) {
+			height: 330px;
+		}
+
+		@include r($xs-breakpoint) {
+			height: 180px;
+		}
+	}
+}
+
+.companyGallery__thumbs {
+	width: 312px;
+	margin: 24px auto 0;
+	overflow: visible;
+	position: relative;
+
+	@include r($md-breakpoint) {
+		width: 277px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 18px;
+	}
+
+	.swiper-button-prev {
+		left: -47px;
+	}
+
+	.swiper-button-next {
+		right: -47px;
+	}
+
+	.swiper-slide {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+
+		@include r($md-breakpoint) {
+			width: 53px;
+			height: 53px;
+		}
+
+		&-active {
+			border: 1px dashed $border-color;
+		}
+
+
+		.photo {
+			@include vcenter();
+			@include cover();
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+
+			@include r($md-breakpoint) {
+				height: 42px;
+				width: 42px;
+			}
+		}
+	}
+}
+
+.company__body {
+	margin-top: 36px;
+
+	@include r($md-breakpoint) {
+		margin-top: 30px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 25px;
+	}
+
+	article {
+		max-width: 714px;
+		width: 100%;
+		margin: 0 auto;
+		padding-left: 38px;
+
+		@include r($xs-breakpoint) {
+			padding-left: 0;
+		}
+	}
+}
+
+
+.companyBrands {
+	margin-top: 55px;
+	margin-bottom: 52px;
+
+	@include r($md-breakpoint) {
+		margin-top: 47px;
+		margin-bottom: 40px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 23px;
+		margin-bottom: 32px;
+	}
+
+	&__title {
+		width: 100%;
+		max-width: 714px;
+		margin: 0 auto;
+		padding-left: 38px;
+
+		@include r($xs-breakpoint) {
+			padding-left: 0;
+		}
+	}
+
+	&__list {
+		padding-top: 52px;
+
+		@include r($md-breakpoint) {
+			padding-top: 30px;
+		}
+
+		@include r($xs-breakpoint) {
+			padding-top: 22px;
+		}
+	}
+}

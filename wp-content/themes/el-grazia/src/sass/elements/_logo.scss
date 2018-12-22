@@ -1,0 +1,12 @@
+.logo {
+
+	svg {
+		width: 170px;
+		height: 62px;
+
+		@include r($md-breakpoint) {
+			width: 104px;
+			height: 40px;
+		}
+	}
+}

@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* Template Name: Сотрудничество */
-  get_header(); 
+  get_header();
 ?>
       <div class="pageWrapper">
         <div class="breadcrumbs">
@@ -29,7 +29,7 @@
                   <h2>Преимущества:</h2>
                 </div>
                 <ul class="advantagesList">
-                	<?php 
+                	<?php
                 	$block = get_field("adv");
                 	if ($block):
                 		foreach($block as $key => $item) :
@@ -42,7 +42,7 @@
 	                    </div>
 	                    <div class="advantagesList__text"> <?php echo $item['text'] ?> </div>
 	                  </li>
-                		
+
                 	<?php endforeach; endif; ?>
                 </ul>
                 <div class="advantages__bottom">
@@ -52,7 +52,7 @@
             </div>
             <div class="locationBox">
               <div class="locationBox__left">
-                <div class="locationBox__map" id="mapLocation">карта яндекс из ACF</div>
+                <div class="locationBox__map" id="mapCenter"></div>
               </div>
               <div class="locationBox__right">
                 <ul class="locationBox__list">

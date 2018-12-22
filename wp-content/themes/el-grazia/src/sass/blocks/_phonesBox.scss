@@ -1,0 +1,25 @@
+.phonesBox {
+	background-color: #fbfbfb;
+	font-size: 20px;
+	line-height: 30px;
+	padding: 44px 78px;
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+
+	a {
+		font-weight: 500;
+	}
+
+
+	&__left {
+		width: percentage(534/1044);
+	}
+
+	&__right {
+		width: percentage(406/1044);
+		a {
+			margin: 0 12px;
+		}
+	}
+}

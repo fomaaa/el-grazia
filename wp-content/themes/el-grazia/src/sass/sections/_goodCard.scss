@@ -1,0 +1,278 @@
+.section--goodCard {
+	padding: 22px 0 0;
+
+	@include r($md-breakpoint) {
+		padding: 8px 0 0;
+	}
+
+	@include r($xs-breakpoint) {
+		padding: 3px 0 0;
+	}
+
+	.section__inner {
+		display: flex;
+		justify-content: space-between;
+
+		@include r($xs-breakpoint) {
+		    flex-flow: column-reverse;
+		}
+	}
+
+	.section__left {
+		width: percentage(435/1200);
+		padding-top: 14px;
+
+		@include r($md-breakpoint) {
+			padding-top: 16px;
+			width: percentage(300/720);
+		}
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+			display: none;
+		}
+
+		.applicationArea {
+			margin-top: 55px;
+
+			@include r($md-breakpoint) {
+				margin-top: 38px;
+				max-width: 280px;
+			}
+		}
+	}
+
+	.section__right {
+		width: percentage(690/1200);
+
+		@include r($md-breakpoint) {
+			width: percentage(389/720);
+		}
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+		}
+
+		.applicationArea {
+
+			@include r($xs-breakpoint) {
+				margin-top: 33px;
+			}
+		}
+	}
+
+	article {
+
+		ul {
+			max-width: 650px;
+
+			@include r($md-breakpoint) {
+				max-width: 375px;
+			}
+		}
+	}
+}
+
+.goodCard__head {
+
+	@include r($xs-breakpoint) {
+		margin-right: -5px;
+		margin-bottom: 14px;
+	}
+
+	h1 {
+		margin-bottom: 30px;
+
+		@include r($md-breakpoint) {
+			margin-bottom: 15px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-bottom: 17px;
+		}
+	}
+}
+
+.goodComposition {
+	margin-top: 38px;
+
+	@include r($md-breakpoint) {
+		margin-top: -3px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 0;
+	}
+
+	&__title {
+		font-weight: 500;
+		color: $black;
+	}
+
+	.list-container,
+	&__list {
+		display: flex;
+		flex-flow: wrap;
+		margin: 22px -27px 0;
+
+		@include r($md-breakpoint) {
+			margin: 14px -20px 0;
+			font-size: 14px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 25px;
+		}
+
+		> .list-column {
+			padding: 0 27px;
+
+			@include r($md-breakpoint) {
+				padding: 0 20px;
+			}
+
+			@include r($xs-breakpoint) {
+				&:not(:first-child) {
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+
+	li {
+		position: relative;
+		padding-left: 32px;
+
+		@include r($md-breakpoint) {
+			padding-left: 29px;
+		}
+
+		&:not(:first-child) {
+			margin-top: 20px;
+
+			@include r($md-breakpoint) {
+				margin-top: 17px;
+			}
+		}
+	}
+
+	li:before {
+		content: '';
+		position: absolute;
+		top: 1px;
+		left: 1px;
+		background-image: url('../img/icons/composit.svg');
+		width: 14px;
+		height: 18px;
+		@include cover();
+	}
+}
+
+
+.goodInfo {
+
+	&:not(:first-child) {
+		margin-top: 45px;
+
+		@include r($md-breakpoint) {
+			margin-top: 30px;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		color: $black;
+	}
+
+	&__body {
+		margin-top: 18px;
+	}
+}
+
+.goodCard__bottom {
+	margin-top: 41px;
+	margin-left: -11px;
+	margin-right: -11px;
+
+	@include r($md-breakpoint) {
+		margin-top: 26px;
+		margin-left: -7.5px;
+		margin-right: -7.5px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 43px;
+	}
+
+	> * {
+		margin: 11px;
+
+		@include r($md-breakpoint) {
+			margin: 7.5px;
+		}
+
+		@include r($xs-breakpoint) {
+			width: calc(100% - 15px);
+		}
+	}
+}
+
+.goodGallery {
+
+	.swiper-slide {
+		overflow: hidden;
+	}
+
+	&__thumbs {
+		width: 180px;
+		margin: 24px auto 0;
+		overflow: visible;
+		position: relative;
+
+		@include r($md-breakpoint) {
+			width: 180px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 18px;
+		}
+
+		.swiper-button-prev {
+			left: -47px;
+		}
+
+		.swiper-button-next {
+			right: -47px;
+		}
+
+		.swiper-slide {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+
+			@include r($md-breakpoint) {
+				width: 53px;
+				height: 53px;
+			}
+
+			&-active {
+				border: 1px dashed $border-color;
+			}
+
+
+			.photo {
+				@include vcenter();
+				@include cover();
+				width: 48px;
+				height: 48px;
+				border-radius: 50%;
+
+				@include r($md-breakpoint) {
+					height: 42px;
+					width: 42px;
+				}
+			}
+		}
+	}
+}
+
