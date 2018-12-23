@@ -23,9 +23,12 @@
                   endwhile; 
                 ?>
             </article>
+            <?php 
+            $block = get_the_tags();
+            if ($block) : ?>
             <ul class="tagsList">
               <?php 
-              $block = get_the_tags();
+              
               if ($block):
                 foreach($block as $item) :
               ?>
@@ -34,6 +37,7 @@
                 </li>
               <?php endforeach; endif; ?>
             </ul>
+          <?php endif; ?>
           </div>
         </div>
         <?php  
