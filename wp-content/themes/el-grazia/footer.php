@@ -3,10 +3,10 @@
           <div class="container">
             <div class="footer__inner">
               <div class="footer__left">
-	            <?php 
+	            <?php
 	                 wp_nav_menu( array(
-	                   'menu'            => 'main_menu', 
-	                   'menu_class'      => 'menu js-splitter', 
+	                   'menu'            => 'main_menu',
+	                   'menu_class'      => 'menu js-splitter',
 	                   'echo'            => true,
 	                   'fallback_cb'     => 'wp_page_menu',
 	                   'items_wrap'      => '<ul id="%1$s" ata-columns="2" data-direction="horizontal" class="%2$s">%3$s</ul>',
@@ -95,7 +95,7 @@
                     <a href="tel:+7 (499) 120-54-59" class="location__phone"><?php the_field("central_phone", 'option'); ?></a>
                     <div class="location__place">
                       <span> <?php the_field("central_adress", 'option'); ?> </span>
-                      <a  href="#mapModal" class="location__place js-locationModal-centerOffice">Показать на карте</a>
+                      <a  href="#mapModal" class="js-locationModal-centerOffice">Показать на карте</a>
                     </div>
                   </div>
                 </div>
@@ -105,7 +105,7 @@
                     <a href="tel:+7 (495) 332-16-11" class="location__phone"> <?php the_field("study_phone", 'option'); ?></a>
                     <div class="location__place">
                       <span> <?php the_field("study_adress", 'option'); ?> </span>
-                      <a href="#mapModal" class="location__place js-locationModal-studyOffice">Показать на карте</a>
+                      <a href="#mapModal" class="js-locationModal-studyOffice">Показать на карте</a>
                     </div>
                   </div>
                 </div>
@@ -141,12 +141,12 @@
         </div>
       </footer>
       <div class="menuBox">
-      	    <?php 
+      	    <?php
                  wp_nav_menu( array(
-                   'menu'            => 'main_menu', 
-                   'container'       => 'div', 
-                   'container_class' => 'menuBox__top', 
-                   'menu_class'      => 'menu js-splitter', 
+                   'menu'            => 'main_menu',
+                   'container'       => 'div',
+                   'container_class' => 'menuBox__top',
+                   'menu_class'      => 'menu js-splitter',
                    'echo'            => true,
                    'fallback_cb'     => 'wp_page_menu',
                    'items_wrap'      => '<ul id="%1$s" ata-columns="2" data-direction="horizontal" class="%2$s">%3$s</ul>',

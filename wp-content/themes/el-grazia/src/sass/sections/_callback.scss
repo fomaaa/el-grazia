@@ -1,0 +1,82 @@
+.section--callback {
+	padding: 60px 0 101px;
+	margin-bottom: -90px;
+	position: relative;
+	z-index: 1;
+
+	@include r($md-breakpoint) {
+		padding: 28px 0 68px;
+		margin-bottom: -72px;
+	}
+
+	@include r($xs-breakpoint) {
+		padding-bottom: 80px;
+	}
+
+}
+
+.callback {
+	background-color: #fff;
+	padding: 57px 78px;
+	margin-top: 50px;
+
+	@include r($md-breakpoint) {
+		margin-top: 20px;
+		padding: 28px 24px 37px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 25px;
+		padding: 18px 20px 28px;
+	}
+}
+
+.form--callback {
+	display: flex;
+	flex-flow: wrap;
+	margin: 0 -12px;
+
+	.form__field {
+		width: 50%;
+		padding: 0 12px;
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+
+			&:not(:first-child) {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	.form__button,
+	.form__field.form__field--textarea {
+		width: 100%;
+		margin-top: 16px;
+
+		@include r($md-breakpoint) {
+			margin-top: 9px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 22px;
+		}
+	}
+
+	.form__button {
+		padding: 0 12px;
+		margin-top: 46px;
+
+		@include r($md-breakpoint) {
+			margin-top: 30px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 25px;
+
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* Template Name: Контакты */
-  get_header(); 
+  get_header();
 ?>
       <div class="pageWrapper">
         <div class="breadcrumbs">
@@ -72,7 +72,7 @@
                       </li>
                     </ul>
                     <div class="contactsInfo"> <?php the_field("c_inn"); ?> </div>
-                    <div class="contactsMap" id="map">карта яндекса через ACF сделать нужно </div>
+                    <div class="contactsMap" id="mapCenter"></div>
                     <div class="roadMap">
                       <div class="roadMap__item">
                         <div class="roadMap__icon">
@@ -136,7 +136,7 @@
                       </li>
                     </ul>
                     <div class="contactsInfo"><?php the_field("o_inn"); ?></div>
-                    <div class="contactsMap" id="map"> карта яндекса через ACF сделать нужно </div>
+                    <div class="contactsMap" id="mapStudy"></div>
                     <div class="roadMap">
                       <div class="roadMap__item">
                         <div class="roadMap__icon">

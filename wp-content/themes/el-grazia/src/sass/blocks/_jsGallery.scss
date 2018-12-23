@@ -1,0 +1,14 @@
+.js-gallery-main {
+
+	.swiper-slide {
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.photo {
+			text-align: center;
+			width: 100%;
+		}
+	}
+}

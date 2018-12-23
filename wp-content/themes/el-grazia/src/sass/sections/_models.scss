@@ -1,0 +1,40 @@
+.section--models {
+	padding: 14px 0 0;
+
+	@include r($md-breakpoint) {
+		padding: 8px 0 0;
+	}
+
+	@include r($xs-breakpoint) {
+		padding: 3px 0 0;
+	}
+
+	.grid {
+		padding-top: 40px;
+
+		@include r($md-breakpoint) {
+			padding-top: 36px;
+		}
+
+		@include r($xs-breakpoint) {
+			padding-top: 20px;
+		}
+
+		.card {
+			height: 100%;
+		}
+	}
+
+	.models__description {
+		margin-top: 52px;
+
+		@include r($md-breakpoint) {
+			max-width: 100%;
+			margin-top: 38px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 35px;
+		}
+	}
+}

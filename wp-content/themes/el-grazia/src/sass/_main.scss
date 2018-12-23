@@ -1,0 +1,156 @@
+:root {
+	--browser-address-bar: 0px;
+}
+
+.out {
+	position: relative;
+	overflow: hidden;
+}
+
+.no-scroll {
+	overflow: hidden;
+
+	@include r($xs-breakpoint) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+.is-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.section .section__title {
+	position: relative;
+}
+
+.section__title {
+	@include font-size($h1-font-sizes);
+	font-weight: 500;
+	color: #1d1d1d;
+}
+
+.section--gray {
+	background-color: $gray;
+}
+
+.swiper-button {
+	border: 2px solid $border-color;
+	border-radius: 100%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	transition: .3s all;
+
+	@include r($md-breakpoint) {
+		width: 40px;
+		height: 40px;
+	}
+
+	svg {
+		width: 6px;
+		height: 10px;
+	}
+}
+
+.swiper-button.button--white {
+	background-color: #fff;
+	border: 0;
+}
+
+.swiper-button.buttonMobile--white {
+
+	@include r($xs-breakpoint) {
+		background-color: #fff;
+		border: 0;
+	}
+}
+
+.swiper-button.button--default {
+	background-color: transparent;
+	border: 0;
+
+	svg {
+		fill: #b7b7b7;
+	}
+}
+
+.textBlock--xs {
+	p {
+		font-size: 13px;
+		line-height: 1.4;
+		color: #999999;
+		font-weight: 300;
+	}
+}
+
+.swiper-container .swiper-pagination {
+	bottom: 0;
+
+	&.swiper-pagination-bullets .swiper-pagination-bullet {
+		margin: 0 5px;
+	}
+
+	&-bullet {
+		width: 12px;
+		height: 12px;
+		opacity: 1;
+		background-color: transparent;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			@include vcenter();
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: $primary-color;
+		}
+
+		&-active {
+			border: 1px solid $primary-color;
+		}
+	}
+}
+
+.oldPrice {
+	text-decoration: line-through;
+}
+
+.newPrice {
+	color: $black;
+	font-weight: 500;
+}
+
+b {
+	color: $black;
+}
+
+.mapModal {
+	width: 382px;
+	height: 265px;
+	padding: 15px;
+	overflow: visible;
+
+	> div {
+		height: 100%;
+		width: 100%;
+	}
+
+	.fancybox-button {
+		top: -10px;
+		right: -15px;
+	}
+}
+
+
+
+

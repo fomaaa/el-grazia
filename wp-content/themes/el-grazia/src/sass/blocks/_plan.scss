@@ -1,0 +1,148 @@
+.plan {
+
+	@include r($md-breakpoint) {
+		margin-left: 54px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-left: 43px;
+	}
+
+	&__head {
+		color: $black;
+		font-weight: 500;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: -4px;
+			left: -53px;
+			width: 32px;
+			height: 32px;
+			border: 2px solid $primary-color;
+			border-radius: 100%;
+			background-image: url('../img/icons/calendar2.svg');
+			background-size: 16px 16px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: #fff;
+
+			@include r($xs-breakpoint) {
+				left: -43px;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			margin-top: 4px;
+			left: -38px;
+			height: 25px;
+			width: 2px;
+			background-color: $primary-color;
+
+			@include r($xs-breakpoint) {
+				left: -28px;
+			}
+		}
+	}
+
+	&__item:not(:first-child) {
+		margin-top: 25px;
+
+		@include r($xs-breakpoint) {
+			margin-top: 22px;
+		}
+	}
+
+	.planBody__title {
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 4px;
+			left: -46px;
+			width: 18px;
+			height: 18px;
+			border: 2px solid $primary-color;
+			border-radius: 100%;
+			background-image: url('../img/icons/circle.svg');
+			background-size: 4px 4px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: #fff;
+			z-index: 2;
+
+			@include r($xs-breakpoint) {
+				top: 2px;
+				left: -36px;
+			}
+		}
+	}
+}
+
+.planBody {
+	line-height: 25px;
+
+	@include r($md-breakpoint) {
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	&:not(:first-child) {
+		margin-top: 25px;
+
+		@include r($xs-breakpoint) {
+			margin-top: 22px;
+		}
+	}
+
+	&__item {
+		position: relative;
+	}
+
+	&__item:not(:first-child) {
+		margin-top: 25px;
+
+		@include r($xs-breakpoint) {
+			margin-top: 22px;
+		}
+	}
+
+	ol {
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -38px;
+			height: calc(100% + 30px);
+			width: 2px;
+			background-color: $primary-color;
+
+			@include r($xs-breakpoint) {
+				left: -28px;
+			}
+		}
+	}
+}
+
+.planBody__title {
+	color: $black;
+	font-weight: 500;
+}
+
+
+.plan__item:last-child {
+
+
+	.planBody__item:last-child {
+
+		ol:after {
+			content: none;
+		}
+	}
+
+}

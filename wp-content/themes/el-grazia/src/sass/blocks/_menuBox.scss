@@ -1,0 +1,160 @@
+.show-menu {
+
+	.btn--burger {
+
+		.bar {
+			width: 17px;
+			margin-top: 0;
+
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			&:nth-child(1) {
+				transform: translate(1px, 2px) rotate(45deg);
+			}
+
+			&:nth-child(3) {
+				transform: translate(1px, -2px) rotate(-45deg);
+			}
+		}
+	}
+
+	.header {
+		@extend .header--white;
+		position: relative;
+		z-index: 100;
+	}
+
+	.menuBox {
+
+		@include r($md-breakpoint) {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+
+.menuBox {
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: calc(100vh - var(--browser-address-bar));
+	z-index: 99;
+	box-shadow: $box-shadow;
+	opacity: 0;
+	visibility: hidden;
+	transition: $transition;
+
+	@include r($xs-breakpoint) {
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	> div {
+		padding-left: 56px;
+		padding-right: 56px;
+
+		@include r($xs-breakpoint) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	&__top {
+		height: percentage(335/526);
+		padding: 130px 0 45px;
+		display: flex;
+		align-items: center;
+		background-color: $primary-color;
+
+		@include r($xs-breakpoint) {
+			padding: 104px 0 42px;
+			display: block;
+			height: auto;
+		}
+
+		.list-container {
+			display: flex;
+			justify-content: space-between;
+			//width: percentage(580/720);
+			width: percentage(460/720);
+			margin: 0 auto;
+
+			@include r($xs-breakpoint) {
+				display: block;
+				width: 100%;
+			}
+
+			> ul {
+				width: auto;
+
+				&:not(:first-child) {
+
+					@include r($xs-breakpoint) {
+						margin-top: 20px;
+					}
+				}
+
+				li:not(:first-child) {
+					margin-top: 18px;
+
+					@include r($xs-breakpoint) {
+						margin-top: 21px;
+					}
+				}
+			}
+		}
+
+		.menu__link {
+			color: #fff;
+			font-weight: 500;
+			font-size: 18px;
+
+			@include r($xs-breakpoint) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&__bottom {
+		height: percentage(201/526);
+		background-color: #fff;
+		padding: 70px 0;
+		display: flex;
+		justify-content: space-between;
+
+		@include r($xs-breakpoint) {
+			height: auto;
+			display: block;
+			padding: 30px 0;
+
+		}
+
+		> div {
+			width: auto;
+
+			&:not(:first-child) {
+
+				@include r($xs-breakpoint) {
+					border-top: 1px solid $border-color;
+					margin-top: 16px;
+					padding-top: 13px;
+				}
+			}
+		}
+	}
+
+	.location {
+
+		&__title {
+			font-size: 15px;
+			font-weight: 300;
+			color: $black;
+			margin-right: 10px;
+		}
+	}
+}

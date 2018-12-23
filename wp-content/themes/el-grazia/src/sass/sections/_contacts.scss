@@ -1,0 +1,385 @@
+.section--contacts {
+	padding: 22px 0 81px;
+
+	@include r($md-breakpoint) {
+		padding: 8px 0 40px;
+	}
+
+	@include r($xs-breakpoint) {
+		padding: 3px 0 24px;
+	}
+}
+
+.tabs__con {
+	display: none;
+
+	&.is-active {
+		display: block;
+	}
+}
+
+.tabs--contacts {
+	margin-top: 38px;
+
+	@include r($md-breakpoint) {
+		margin-top: 22px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 15px;
+	}
+
+	.tabsList {
+		display: flex;
+
+		&__item {
+			width: 50%;
+			border: 1px solid $border-color;
+
+			@include r($xs-breakpoint) {
+				border: 0;
+				text-align: left;
+			}
+
+			&:last-child {
+				border-left: 0;
+
+				@include r($xs-breakpoint) {
+					border-left: 1px solid $border-color;
+
+					a {
+						text-align: right;
+					}
+				}
+			}
+
+			a {
+				display: block;
+				text-align: center;
+				padding: 35px 35px 37px;
+				font-weight: 300;
+				font-size: 20px;
+				color: $primary-color;
+
+				@include r($md-breakpoint) {
+					font-size: 16px;
+					padding: 20px 20px 18px;
+				}
+
+				@include r($xs-breakpoint) {
+					padding: 5px 0;
+					font-size: 14px;
+					text-align: initial;
+				}
+
+				&.is-active {
+					color: $black;
+					position: relative;
+
+					&:before {
+						content: '';
+						position: absolute;
+						bottom: -13px;
+						left: 50%;
+						transform: translateX(-50%) rotate(-45deg);
+						width: 25px;
+						height: 25px;
+						border-bottom: 1px solid $border-color;
+						border-left: 1px solid $border-color;
+						background-color: #fff;
+
+						@include r($md-breakpoint) {
+							width: 18px;
+							height: 18px;
+							bottom: -10px;
+						}
+
+						@include r($xs-breakpoint) {
+							content: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.tabsBox {
+		padding-top: 43px;
+
+		@include r($md-breakpoint) {
+			padding-top: 35px;
+		}
+
+		@include r($xs-breakpoint) {
+			padding-top: 20px;
+		}
+	}
+}
+
+.contactsList {
+	display: flex;
+	flex-flow: wrap;
+	margin: 0 -10px;
+
+	&__item {
+		width: 50%;
+		padding: 0 10px;
+		display: flex;
+		flex-flow: column;
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+		}
+
+		&:not(:nth-child(-n+2)) {
+			margin-top: 20px;
+
+			@include r($md-breakpoint) {
+				margin-top: 27px;
+			}
+
+			@include r($xs-breakpoint) {
+				margin-top: 0;
+			}
+		}
+
+		&:not(:first-child) {
+
+			@include r($xs-breakpoint) {
+				margin-top: 24px;
+			}
+		}
+	}
+
+	&__icon {
+		fill: $primary-color;
+		min-height: 34px;
+		margin-bottom: auto;
+
+		@include r($xs-breakpoint) {
+			min-height: auto;
+		}
+
+		svg {
+			vertical-align: middle;
+		}
+
+		.icon-mail {
+			width: 35px;
+			height: 24px;
+
+			@include r($xs-breakpoint) {
+				width: 29px;
+				height: 20px;
+			}
+		}
+
+		.icon-time {
+			width: 34px;
+			height: 34px;
+
+			@include r($xs-breakpoint) {
+				width: 31px;
+				height: 31px;
+			}
+		}
+
+		.icon-phone {
+			width: 36px;
+			height: 36px;
+
+			@include r($xs-breakpoint) {
+				width: 26px;
+				height: 26px;
+			}
+		}
+
+		.icon-marker {
+			width: 27px;
+			height: 39px;
+
+			@include r($xs-breakpoint) {
+				width: 20px;
+				height: 29px;
+			}
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		color: $black;
+		margin-top: 19px;
+
+		@include r($xs-breakpoint) {
+			margin-top: 10px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 20px;
+		line-height: 25px;
+		margin-top: 10px;
+		max-width: 380px;
+
+		@include r($md-breakpoint) {
+			font-size: 16px;
+			line-height: 22px;
+		}
+
+		@include r($xs-breakpoint) {
+			font-size: 15px;
+			margin-right: -5px;
+		}
+	}
+}
+
+.contactsInfo {
+	font-size: 20px;
+	margin-top: 49px;
+
+	@include r($md-breakpoint) {
+		font-size: 16px;
+		margin-top: 25px;
+	}
+
+	@include r($xs-breakpoint) {
+		font-size: 15px;
+	}
+}
+
+.contactsMap {
+	margin-top: 55px;
+	margin-bottom: 47px;
+	height: 404px;
+	background-color: $gray;
+
+	@include r($md-breakpoint) {
+		height: 242px;
+		margin-top: 35px;
+		margin-bottom: 60px;
+	}
+
+	@include r($xs-breakpoint) {
+		height: 300px;
+		margin-bottom: 30px;
+	}
+}
+
+.roadMap {
+	display: flex;
+	flex-flow: wrap;
+	margin: 0 -10px;
+
+	&__icon {
+		margin-bottom: auto;
+		min-height: 31px;
+		display: flex;
+		align-items: center;
+
+		@include r($xs-breakpoint) {
+			width: 39px;
+			text-align: center;
+		}
+
+		.icon-step {
+			width: 44px;
+			height: 31px;
+
+			@include r($xs-breakpoint) {
+				width: 34px;
+				height: 24px;
+			}
+		}
+
+		.icon-car {
+			width: 46px;
+			height: 20px;
+			margin-top: 13px;
+
+			@include r($xs-breakpoint) {
+				margin-top: 0;
+				width: 39px;
+				height: 17px;
+			}
+		}
+	}
+
+	&__item {
+		width: 50%;
+		padding: 0 10px;
+
+		@include r($xs-breakpoint) {
+			display: flex;
+			align-items: center;
+			flex-flow: wrap;
+			width: 100%;
+
+			&.is-active {
+
+				.roadMap__text {
+					display: block;
+				}
+
+				.roadMap__title:after {
+					transform: translateY(-50%) rotate(180deg);
+					top: 10px;
+				}
+			}
+		}
+
+		&:not(:first-child) {
+
+			@include r($xs-breakpoint) {
+				border-top: 1px solid $border-color;
+				margin-top: 8px;
+				padding-top: 14px;
+			}
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 16px;
+		margin-top: 20px;
+		color: $black;
+
+		@include r($xs-breakpoint) {
+			margin-top: 0;
+			color: $primary-color;
+			font-weight: 500;
+			padding-left: 12px;
+			width: calc(100% - 39px);
+			position: relative;
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				width: 10px;
+				height: 6px;
+				background-image: url('../img/icons/arrow_down--blue.svg');
+			}
+		}
+	}
+
+	&__text {
+		margin-top: 19px;
+		font-size: 16px;
+		line-height: 25px;
+		max-width: 515px;
+
+		@include r($md-breakpoint) {
+			font-size: 14px;
+			line-height: 22px;
+			max-width: 330px;
+			margin-top: 17px;
+		}
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+			display: none;
+		}
+	}
+}
