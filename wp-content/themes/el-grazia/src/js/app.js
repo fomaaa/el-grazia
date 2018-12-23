@@ -96,5 +96,9 @@ window.$ = $;
       }
     });
 
+    $('article img').each(function() {
+      $(this).unwrap();
+    });
+
   });
 })(jQuery);
