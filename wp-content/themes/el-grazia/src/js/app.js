@@ -54,7 +54,7 @@ window.$ = $;
     });
 
     $('.tabs').sTabs();
-    
+
     $('.btn--burger').on('click', function(e) {
       e.preventDefault();
 
@@ -94,6 +94,10 @@ window.$ = $;
       deactivate: function(item) {
         $(item).removeClass(ACTIVE);
       }
+    });
+
+    $('article img').each(function() {
+      $(this).unwrap();
     });
 
   });
