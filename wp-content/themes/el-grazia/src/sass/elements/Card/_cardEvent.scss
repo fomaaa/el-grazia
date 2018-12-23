@@ -110,7 +110,6 @@
 				width: 50%;
 
 				&:nth-child(even) {
-					//padding-left: 37px;
 					position: relative;
 
 					@include r($xs-breakpoint) {

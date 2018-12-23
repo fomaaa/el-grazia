@@ -2,12 +2,12 @@ let $categoryTarget = $('.filter [data-id]');
 let $sectionTitle = $('.section--catalog .section__title');
 let $gridWrapper = $('.section--catalog .gridWrapper');
 
-let templateCatalog = (gridCards) => {
+let templateCatalog = (category) => {
   return `
     <div class="gridWrapper">
           <div class="grid gridDesktop--3 gridMobile--2"></div>
           <div class="grid__bottom">
-                  <a href="#" id="load_more" data-category="38" class="btn btn--primary"><span>Показать еще</span></a>
+                  <a href="#" id="load_more" data-category="${category}" class="btn btn--primary"><span>Показать еще</span></a>
                   <a href="/registration/?type=price" class="btn btn--secondary"><span>Узнать стоимость</span></a>
           </div>
     </div>
@@ -34,6 +34,9 @@ let newCard = (photo, title, subtitle, link) => {
 $categoryTarget.on('click', function(e) {
   e.preventDefault();
   let self = $(this);
+
+  $categoryTarget.removeClass('is-active');
+  self.addClass('is-active');
 
   $.ajax({
     url: ajax_url,
@@ -62,7 +65,7 @@ $categoryTarget.on('click', function(e) {
         if ($gridCatalog.length) {
           $gridCatalog.replaceWith($gridContainer);
         } else {
-          $gridWrapper.replaceWith(templateCatalog());
+          $('.section--catalog .gridWrapper').replaceWith(templateCatalog(id_category));
           $('.section--catalog .grid').replaceWith($gridContainer);
         }
       }
@@ -74,4 +77,61 @@ $categoryTarget.on('click', function(e) {
     }
   });
 
+});
+
+$('.category__title').on('click', function(e) {
+  if ($(window).width() > 1025) {
+    e.preventDefault();
+
+    let self = $(this);
+
+    if (self.closest('.category').find('.subCategory__title').hasClass('is-active')) {
+      self.closest('.category').find('.subCategory__title').removeClass('is-active');
+      self.closest('.category').find('.subCategory__title').next().slideUp(400);
+    }
+
+    // if (self.hasClass('is-active')) {
+    //   $('.category__title').removeClass('is-active');
+    // } else {
+    //   $('.category__title').removeClass('is-active');
+    //   self.addClass('is-active');
+    // }
+
+    self.parent().find('.subCategory').slideToggle(400);
+  }
+});
+
+$('.subCategory__title').on('click', function(e) {
+  if ($(window).width() > 1025) {
+    e.preventDefault();
+
+    let self = $(this);
+
+    // if (self.hasClass('is-active')) {
+    //   $('.subCategory__title').removeClass('is-active');
+    // } else {
+    //   $('.subCategory__title').removeClass('is-active');
+    //   self.addClass('is-active');
+    // }
+
+    self.next().slideToggle(400);
+  }
+});
+
+$('.filter__title').on('click', function(e) {
+  e.preventDefault();
+
+  $(this).closest('.filter').toggleClass('is-active');
+});
+
+let $filterMobile = $('.filterMobile');
+
+$('.subCategory__title', $filterMobile).on('click', function(e) {
+  e.preventDefault();
+  $('.subCategory__title', $filterMobile).removeClass('is-active');
+  $(this).addClass('is-active');
+});
+
+$('.categorySelect__label').on('click', function() {
+  $(this).parent().toggleClass('is-active');
 });

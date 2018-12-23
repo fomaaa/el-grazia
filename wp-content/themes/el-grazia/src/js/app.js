@@ -16,6 +16,7 @@ import './sections/preview';
 import './sections/mapAnimate';
 
 import './lib/animatenumber';
+import './lib/menu';
 
 import './components/jquery.splitter';
 import './components/jquery.sTabs';
@@ -23,8 +24,8 @@ import './components/sliders';
 import './components/gallery';
 import './components/mobileCategory';
 import './components/mask';
-import './components/maps';
 import './components/catalog';
+import './components/maps';
 import {isMobile} from './components/utils';
 
 window.$ = $;
@@ -64,13 +65,23 @@ window.$ = $;
 
       if (isMobile() && !$body.hasClass('no-scroll')) {
         $body.data('scroll-offset', $(window).scrollTop());
+
+        // $body.css({
+        //   'top': $body.data('scroll-offset')
+        // });
       } else {
+        // $body.css({
+        //   'top': 0
+        // });
+
         $('html, body').animate({
           scrollTop: $body.data('scroll-offset')
         }, 10);
       }
 
       $body.toggleClass('show-menu no-scroll');
+
+
     });
 
     vhCheck('browser-address-bar');
@@ -83,52 +94,17 @@ window.$ = $;
       });
     });
 
-    $('.category__title').on('click', function(e) {
-      if ($(window).width() > 1025) {
-        e.preventDefault();
 
-        let self = $(this);
-
-        if (self.closest('.category').find('.subCategory__title').hasClass('is-active')) {
-          self.closest('.category').find('.subCategory__title').removeClass('is-active');
-          self.closest('.category').find('.subCategory__title').next().slideUp(400);
-        }
-
-        self.toggleClass('is-active');
-        self.parent().find('.subCategory').slideToggle(400);
+    $('.menuChild').menuAim({
+      rowSelector: 'li',
+      submenuDirection: 'right',
+      activate: function(item) {
+        $(item).addClass(ACTIVE);
+      },
+      deactivate: function(item) {
+        $(item).removeClass(ACTIVE);
       }
     });
-
-    $('.subCategory__title').on('click', function(e) {
-      if ($(window).width() > 1025) {
-        e.preventDefault();
-
-        let self = $(this);
-
-        self.toggleClass('is-active');
-        self.next().slideToggle(400);
-      }
-    });
-
-    $('.filter__title').on('click', function(e) {
-      e.preventDefault();
-
-      $(this).closest('.filter').toggleClass('is-active');
-    });
-
-    let $filterMobile = $('.filterMobile');
-
-    $('.subCategory__title', $filterMobile).on('click', function(e) {
-      e.preventDefault();
-      $('.subCategory__title', $filterMobile).removeClass('is-active');
-      $(this).addClass('is-active');
-    });
-
-    $('.categorySelect__label').on('click', function() {
-      $(this).parent().toggleClass('is-active');
-    });
-
-
 
   });
 })(jQuery);
