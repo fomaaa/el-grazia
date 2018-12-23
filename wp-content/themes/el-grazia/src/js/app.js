@@ -5,7 +5,7 @@ import $ from 'jquery';
 import 'selectric';
 import '@fancyapps/fancybox';
 
-import {ACTIVE} from './_const';
+import {ACTIVE, BODY} from './_const';
 
 import './sections/banner';
 import './sections/about';
@@ -41,45 +41,34 @@ window.$ = $;
     $(window).on('scroll', function() {
 
       if ($(window).scrollTop() > $('.header').outerHeight()) {
-        $('.headerSticky').addClass('is-active');
+        $('.headerSticky').addClass(ACTIVE);
       } else {
-        $('.headerSticky').removeClass('is-active');
+        $('.headerSticky').removeClass(ACTIVE);
       }
     });
 
     $('.js-select').selectric();
 
     $('.roadMap__item').on('click', function() {
-      $(this).toggleClass('is-active');
+      $(this).toggleClass(ACTIVE);
     });
 
     $('.tabs').sTabs();
-
-    let $body = $('body');
-
+    
     $('.btn--burger').on('click', function(e) {
       e.preventDefault();
 
       $(this).toggleClass(ACTIVE);
 
-
-      if (isMobile() && !$body.hasClass('no-scroll')) {
-        $body.data('scroll-offset', $(window).scrollTop());
-
-        // $body.css({
-        //   'top': $body.data('scroll-offset')
-        // });
+      if (isMobile() && !BODY.hasClass('no-scroll')) {
+        BODY.data('scroll-offset', $(window).scrollTop());
       } else {
-        // $body.css({
-        //   'top': 0
-        // });
-
         $('html, body').animate({
-          scrollTop: $body.data('scroll-offset')
+          scrollTop: BODY.data('scroll-offset')
         }, 10);
       }
 
-      $body.toggleClass('show-menu no-scroll');
+      BODY.toggleClass('show-menu no-scroll');
 
 
     });
@@ -87,15 +76,16 @@ window.$ = $;
     vhCheck('browser-address-bar');
 
     $('.js-splitter').each(function() {
+      let self = $(this);
 
-      $(this).splitter({
-        columns: $(this).data('columns'),
-        direction: $(this).data('direction') || 'vertical'
+      self.splitter({
+        columns: self.data('columns'),
+        direction: self.data('direction') || 'vertical'
       });
     });
 
 
-    $('.menuChild').menuAim({
+    $('.menu__parent').menuAim({
       rowSelector: 'li',
       submenuDirection: 'right',
       activate: function(item) {
