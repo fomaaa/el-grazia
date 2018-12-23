@@ -54,15 +54,15 @@ defined( 'ABSPATH' ) || exit;
                 <div class="goodGallery__thumbs">
                   <div class="swiper-container js-gallery-thumbs" data-items="3">
                     <div class="swiper-wrapper">            	
-					<?php 
-					if ($block):
-						foreach($block as $item) :
-					?>
+          					<?php 
+          					if ($block):
+          						foreach($block as $item) :
+          					?>
 	                      <div class="swiper-slide">
 	                        <div class="photo" style="background-image: url('<?php echo $item['sizes']['thumbnail'] ?>');"></div>
 	                      </div>
 						
-					<?php endforeach; endif; ?>
+					           <?php endforeach; endif; ?>
             		
 
                     </div>
@@ -79,6 +79,7 @@ defined( 'ABSPATH' ) || exit;
                   </div>
                 </div>
               </div>
+              <?php if (get_field('face') || get_field('neck') || get_field('neckline')) : ?>
               <div class="applicationArea">
                 <div class="applicationArea__figure" style="background-image: url('<?php echo get_template_directory_uri() ?>/img/woman.png');"></div>
                 <div class="applicationArea__title">Область <br>Применения:</div>
@@ -142,6 +143,7 @@ defined( 'ABSPATH' ) || exit;
                   <?php endif ?>
                 </ul>
               </div>
+              <?php endif; ?>
             </div>
             <div class="section__right">
               <div class="goodCard__head">
@@ -168,15 +170,15 @@ defined( 'ABSPATH' ) || exit;
                 <div class="goodGallery__thumbs">
                   <div class="swiper-container js-gallery-thumbs" data-items="3">
                     <div class="swiper-wrapper">
-					<?php 
-					if ($block):
-						foreach($block as $item) :
-					?>
+          					<?php 
+          					if ($block):
+          						foreach($block as $item) :
+          					?>
 	                      <div class="swiper-slide">
 	                        <div class="photo" style="background-image: url('<?php echo $item['sizes']['thumbnail'] ?>');"></div>
 	                      </div>
 						
-					<?php endforeach; endif; ?>
+					           <?php endforeach; endif; ?>
                     </div>
                   </div>
                   <div class="swiper-button swiper-button-prev button--default">
@@ -192,7 +194,7 @@ defined( 'ABSPATH' ) || exit;
                 </div>
               </div>
               <article>
-					<?php the_content(); ?>
+					       <?php the_content(); ?>
               </article>
               <div class="goodComposition">
                 <div class="goodComposition__title"> Состав: </div>
@@ -210,11 +212,12 @@ defined( 'ABSPATH' ) || exit;
               <div class="goodInfo">
                 <div class="goodInfo__title"> Активные ингридиенты: </div>
                 <div class="goodInfo__body">
- 					<?php the_field("active"); ?>
+ 					        <?php the_field("active"); ?>
                 </div>
               </div>
+               <?php if (get_field('face') || get_field('neck') || get_field('neckline')) : ?>
               <div class="applicationArea hiddenTablet">
-                <div class="applicationArea__figure" style="background-image: url('img/woman.png');"></div>
+                <div class="applicationArea__figure" style="background-image: url('<?php echo get_template_directory_uri() ?>/img/woman.png');"></div>
                 <div class="applicationArea__title">Область <br>Применения:</div>
                 <ul class="applicationArea__list">
                 <?php if (get_field('face')) : ?>
@@ -276,6 +279,7 @@ defined( 'ABSPATH' ) || exit;
                   <?php endif ?>
                 </ul>
               </div>
+              <?php endif; ?>
               <div class="goodCard__bottom">
                 <a href="<?php echo get_page_link('296') ?>?type=price&id=<?php echo get_the_ID() ?>" class="btn btn--primary"><span>Запросить стоимость</span></a>
                 <a href="<?php echo get_post_permalink(get_field('brand')) ?>" class="btn btn--secondary"><span>Подробнее о бренде</span></a>

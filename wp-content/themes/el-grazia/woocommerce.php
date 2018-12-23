@@ -44,8 +44,12 @@
 <?php else :?>
   <?php if (!is_product()) : ?>
     <?php 
+
       $category = single_term_title("", false);;
       $current_cat = get_terms('hierarchical=1&hide_empty=0&taxonomy=product_cat&slug='. $category);
+      $tree = getProductCatTree($current_cat[0]->term_taxonomy_id);
+      $tree = array_reverse($tree);
+
       if (!empty($current_cat[0]->parent)) {
         $parent_cat = get_term($current_cat[0]->parent);
         $parent_cat_id = $parent_cat->parent;
@@ -67,10 +71,9 @@
           ); ?>
           </div>
         </div>
-
         <div class="section section--catalog">
           <div class="container section__inner">
-            <div class="section__title" data-counter="<?php if (!empty($current_cat[0])) : echo $current_cat[0]->count; else : echo 0 ; endif?>"> Минеральные тональные средства Fresh Minerals </div>
+            <div class="section__title" data-counter="<?php if (!empty($current_cat[0])) : echo $current_cat[0]->count; else : echo 0 ; endif?>"><?php echo single_cat_title(); ?> </div>
             <div class="section__left">
               <div class="filter">
                 <button type="button" class="filter__title">
@@ -83,8 +86,7 @@
                 </button>
                 <div class="filterMobile">
                   <?php   
-                    $category = single_term_title("", false);
-                    $prod_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=0');
+                    $prod_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $tree[0]);
                     foreach ($prod_terms as $prod_term) :
                   ?>
                     <div class="subCategory">
@@ -110,7 +112,7 @@
                   ?>
                     <div class="filter__item">
                       <div class="category">
-                        <a href="" role="button" data-id="<?php echo $prod_term->term_id ?>" class="category__title <?php if($prod_term->term_id == $parent_cat_id) echo 'is-active'; ?>">
+                        <a href="" role="button" data-id="<?php echo $prod_term->term_id ?>" class="category__title <?php if($prod_term->term_id == $tree[0]) echo 'is-active'; ?>">
                           <span><?php echo  $prod_term->name ?></span>
                           <span class="arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10 6" width="10px" height="6px">
@@ -122,16 +124,21 @@
                         <?php foreach ($child_terms as $child_term) : 
                           $lastChilds = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $child_term->term_id);
                         ?>
-                        <div class="subCategory" style="<?php if($prod_term->term_id == $parent_cat_id) echo 'display: block'; ?>">
-                          <a href="<?php if (!$lastChilds) : echo  get_term_link($child_term); else : echo 'javascript:void(0)'; endif; ?>)" class="subCategory__title <?php if($child_term->term_id == $current_cat[0]->parent) echo 'is-active'; ?>" role="button" data-id="<?php echo $child_term->term_id ?>"> <?php echo $child_term->name ?> </a>
+                        <div class="subCategory" style="<?php if($prod_term->term_id == $tree[0]) echo 'display: block'; ?>">
+                          <a href="<?php if (!$lastChilds) : echo  get_term_link($child_term); else : echo 'javascript:void(0)'; endif; ?>)" class="subCategory__title <?php if($child_term->term_id == $tree[1]) echo 'is-active'; ?>" role="button" data-id="<?php echo $child_term->term_id ?>"> <?php echo $child_term->name ?> </a>
                           <?php if($lastChilds) : ?>
-                          <ul  style="<?php if($child_term->term_id == $current_cat[0]->parent) echo 'display: block'; ?>" >
+                          <ul  style="<?php if($child_term->term_id == $tree[1]) echo 'display: block'; ?>" >
                             <?php 
                               
                               foreach ($lastChilds as $lastChild) :
                             ?>
                             <li>
-                              <a data-id="<?php echo $lastChild->term_id ?>" href="<?php echo get_term_link($lastChild) ?>" role="button"><?php echo $lastChild->name; ?></a>
+                              <a class="<?php
+                              if (!empty($tree[2])) {
+
+                               if ($lastChild->term_id == $tree[2]) echo 'is-active'; 
+                              }
+                              ?>" data-id="<?php echo $lastChild->term_id ?>" href="<?php echo get_term_link($lastChild) ?>" role="button"><?php echo $lastChild->name; ?></a>
                             </li>
                             <?php endforeach; ?>
                           </ul>

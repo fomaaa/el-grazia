@@ -20,5 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
- _e( 'No products were found matching your selection.', 'woocommerce' ); 
+
 ?>
+
+<div class="section__right">
+              <div class="gridWrapper"><h3 class="text-center">Товаров, соответствующих вашему запросу, не обнаружено.</h3></div>
+				
+			          </div>

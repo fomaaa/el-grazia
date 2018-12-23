@@ -90,17 +90,64 @@
             </div>
           </div>
           <div class="header__bottom">
+            <nav class="nav">
+              <ul class="menu">
+                <?php
+                 $menu = get_field('main_menu', 'option'); 
+
+                 foreach ($menu as $key => $item) : ?>
+                    <li class="menu__item <?php if ($item['page'] == 313) echo 'menu__parent' ?>">
+                      <a href="<?php the_permalink($item['page']) ?>" class="menu__link"> <?php echo $item['name'] ?></a>
+                      <?php if ($item['page'] == 313) : ?>
+                      <ul class="menuChild">
+                        <?php 
+                          $prod_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=0');
+                          foreach ($prod_terms as $prod_term) :
+
+
+                        ?>
+                          <li class="menuChild__item">
+                            <a href="<?php echo get_term_link($prod_term); ?>"><?php echo  $prod_term->name ?></a>
+                            <ul class="subMenu">
+                              <?php $child_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $prod_term->term_id); ?>
+                              <?php foreach ($child_terms as $child_term) : ?>
+                              <li class="subMenu__item">
+                                <a href="<?php echo get_term_link($child_term); ?>"><?php echo $child_term->name ?></a>
+                                <ul class="subMenu">
+                                  <?php 
+                                    $lastChilds = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $child_term->term_id);
+                                    if ($lastChilds) :
+                                    foreach  ($lastChilds as $lastChild) :
+                                  ?>
+                                    <li class="subMenu__item">
+                                      <a href="<?php echo get_term_link($lastChild) ?>"><?php echo $lastChild->name; ?></a>
+                                    </li>
+                                  <?php endforeach; endif; ?>
+                                </ul>
+                              </li>
+                              <?php endforeach; ?>
+      
+                            </ul>
+                          </li>
+                        <?php endforeach; ?>
+                      </ul>
+                      <?php endif; ?>
+                    </li>
+                 
+                <?php endforeach; ?>
+              </ul>
+            </nav>
           	<?php
-                 wp_nav_menu( array(
-                   'menu'            => 'main_menu',
-                   'container'       => 'nav',
-                   'container_class' => 'nav',
-                   'menu_class'      => 'menu',
-                   'echo'            => true,
-                   'fallback_cb'     => 'wp_page_menu',
-                   'items_wrap'      => '<ul id="%1$s" class="%2$s menu">%3$s</ul>',
-                   'depth'           => 0,
-                 ) );
+                 // wp_nav_menu( array(
+                 //   'menu'            => 'main_menu',
+                 //   'container'       => 'nav',
+                 //   'container_class' => 'nav',
+                 //   'menu_class'      => 'menu',
+                 //   'echo'            => true,
+                 //   'fallback_cb'     => 'wp_page_menu',
+                 //   'items_wrap'      => '<ul id="%1$s" class="%2$s menu">%3$s</ul>',
+                 //   'depth'           => 0,
+                 // ) );
             ?>
           </div>
         </div>
@@ -161,17 +208,18 @@
             </div>
           </div>
           <div class="header__bottom">
+
             <?php
-                 wp_nav_menu( array(
-                   'menu'            => 'main_menu',
-                   'container'       => 'nav',
-                   'container_class' => 'nav',
-                   'menu_class'      => 'menu',
-                   'echo'            => true,
-                   'fallback_cb'     => 'wp_page_menu',
-                   'items_wrap'      => '<ul id="%1$s" class="%2$s menu">%3$s</ul>',
-                   'depth'           => 0,
-                 ) );
+                 // wp_nav_menu( array(
+                 //   'menu'            => 'main_menu',
+                 //   'container'       => 'nav',
+                 //   'container_class' => 'nav',
+                 //   'menu_class'      => 'menu',
+                 //   'echo'            => true,
+                 //   'fallback_cb'     => 'wp_page_menu',
+                 //   'items_wrap'      => '<ul id="%1$s" class="%2$s menu">%3$s</ul>',
+                 //   'depth'           => 0,
+                 // ) );
             ?>
           </div>
         </div>

@@ -103,6 +103,14 @@ if ( ! function_exists( 'el_grazia_setup' ) ) :
 				'capability' => 'edit_posts',
 				'redirect' => false,
 				'icon_url' => 'dashicons-phone',
+			));	
+			acf_add_options_page(array(
+				'page_title' => 'Настройки меню',
+				'menu_title' => 'Настройки меню',
+				'menu_slug' => 'theme-general-menu',
+				'capability' => 'edit_posts',
+				'redirect' => false,
+				// 'icon_url' => 'dashicons-phone',
 			));		
 		}	
 
@@ -168,7 +176,7 @@ add_action( 'widgets_init', 'el_grazia_widgets_init' );
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+// if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
 
 function my_jquery_enqueue() {
    wp_deregister_script('jquery');
@@ -289,10 +297,10 @@ function my_navigation_template( $template, $class ){
 }
 
 
-add_filter('wpcf7_form_elements', function($content) {
-	$content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-	return $content;
-});
+// add_filter('wpcf7_form_elements', function($content) {
+// 	$content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+// 	return $content;
+// });
 
 function getAdvSVGClass($index) {
 	switch($index) {
@@ -336,7 +344,7 @@ function toolset_fix_custom_posts_per_page( $query_string ){
     $post_types_to_fix = array(
         array(
             'post_type' => 'news',
-            'posts_per_page' => 3
+            'posts_per_page' => 12
         ),
     );
  
@@ -355,12 +363,11 @@ function toolset_fix_custom_posts_per_page( $query_string ){
 add_filter( 'request', 'toolset_fix_custom_posts_per_page' , 999);
 
 
-		function edit_admin_menus() {
-		    global $menu;
-		// здесь будут пункты меню, которые нужно менять
-		    $menu[5][0] = 'Статьи'; // Изменить название
-		}
-		add_action( 'admin_menu', 'edit_admin_menus' );
+function edit_admin_menus() {
+	global $menu;
+	$menu[5][0] = 'Статьи';
+}
+add_action( 'admin_menu', 'edit_admin_menus' );
 
 		
 
@@ -395,7 +402,7 @@ function change_post_menu_label() {
     unset($menu['55.5']);
 }
 
- add_action( 'admin_menu', 'change_post_menu_label' );
+add_action( 'admin_menu', 'change_post_menu_label' );
 
 
 add_action( 'wp_ajax_nopriv_load_more', 'load_more');
@@ -504,4 +511,18 @@ function load_category() {
 	
 
 	exit(json_encode($data));
+}
+
+
+function getProductCatTree($id, $data = array()){
+	$counter = 0;
+	$data[] = $id;
+	$parent = get_term_by('term_taxonomy_id', $id);
+
+	if ($parent->parent) {
+		$data = getProductCatTree($parent->parent, $data);
+		
+	} 
+
+	return $data;
 }

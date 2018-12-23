@@ -21,12 +21,12 @@
               <ul class="menu">
                 <?php 
                 $block = get_categories();
-
+                $category = single_term_title("", false);
                 if ($block):
                   foreach($block as $item) :
                 ?>
-                  <?php if ($item->term_id == 72) continue; ?>
-                  <li class="menu__item <?php if ($item->slug == get_the_category()[0]->slug) echo 'is-active'; ?>">
+                  <?php if ($item->term_id == 74) continue; ?>
+                  <li class="menu__item <?php if ($item->slug == get_the_category()[0]->slug && $category != 'Статьи') echo 'is-active'; ?>">
                     <a href="<?php echo get_category_link($item) ?>" class="menu__link"><?php echo $item->name ?></a>
                   </li>
                   

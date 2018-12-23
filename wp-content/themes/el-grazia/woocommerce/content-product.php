@@ -29,7 +29,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                     <div class="card card--good">
                       <a href="<?php the_permalink(); ?>" class="card__link"></a>
                       <div class="card__photo">
-                        <?php echo woocommerce_get_product_thumbnail() ?>
+                        <img src=" <?php echo get_the_post_thumbnail_url($product->get_id(), 'medium') ?>" >
+                       
                       </div>
                       <div class="card__body">
                         <div class="card__title"><?php the_title(); ?></div>

@@ -36,19 +36,25 @@
             </ul>
           </div>
         </div>
-                <div class="section section--carousel">
+        <?php  
+          $cat = get_the_category();
+          $cat_id = $cat[0]->term_id;
+          $term = get_term_by('term_taxonomy_id', $cat_id);
+          if ($term->count > 1) :
+        ?>
+        <div class="section section--carousel">
           <div class="container section__inner carousel">
             <div class="section__head">
               <div class="section__title">Другие статьи</div>
               <div class="carouselNav">
                 <div class="swiper-button swiper-button-prev buttonMobile--white">
                   <svg class="icon icon-arrow_small_left">
-                    <use xlink:href="img/sprite.svg#icon-arrow_small_left"></use>
+                    <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-arrow_small_left"></use>
                   </svg>
                 </div>
                 <div class="swiper-button swiper-button-next buttonMobile--white">
                   <svg class="icon icon-arrow_small_right">
-                    <use xlink:href="img/sprite.svg#icon-arrow_small_right"></use>
+                    <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-arrow_small_right"></use>
                   </svg>
                 </div>
               </div>
@@ -56,9 +62,18 @@
             <div class="carouselBody swiper-container">
               <div class="swiper-wrapper">
                 <?php
+
                     $current_id = get_the_ID();
                     $posts = query_posts(array( 
                         'posts_per_page'  => 10,
+                        'tax_query' => array(
+                              array(
+                                  'taxonomy' => 'category',
+                                  'terms' => $cat_id,
+                                  'field' => 'term_id',
+                              )
+                          ),
+
                       )
                     );
 
@@ -83,4 +98,5 @@
             </div>
           </div>
         </div>
+      <?php endif; ?>
       </div>

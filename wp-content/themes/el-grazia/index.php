@@ -17,14 +17,15 @@ get_header();
       <div class="pageWrapper">
         <div class="breadcrumbs">
           <div class="container">
-            <ul class="breadcrumbsList">
-              <li class="breadcrumbsList__item">
-                <a href="/page.html">Главная</a>
-              </li>
-              <li class="breadcrumbsList__item">
-                <span>Новости</span>
-              </li>
-            </ul>
+          <?php woocommerce_breadcrumb(
+              array(
+              'before' => '<li class="breadcrumbsList__item">',
+              'after' => '</li>',
+              'wrap_before' => '<ul class="breadcrumbsList">',
+              'wrap_after' => '</ul>',
+              'delimiter' => ''
+            )
+          ); ?>
           </div>
         </div>
         <div class="section section--articles">
@@ -40,7 +41,7 @@ get_header();
                 if ($block):
                   foreach($block as $item) :
                 ?>
-                  <?php if ($item->term_id == 72) continue; ?>
+                  <?php if ($item->term_id == 74) continue; ?>
                   <li class="menu__item">
                     <a href="<?php echo get_category_link($item) ?>" class="menu__link"><?php echo $item->name ?></a>
                   </li>

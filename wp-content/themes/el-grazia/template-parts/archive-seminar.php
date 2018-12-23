@@ -16,7 +16,7 @@
         <div class="section section--events">
           <div class="container section__inner">
             <div class="section__title">
-              <h1> <?php the_title(); ?> </h1>
+              <h1> Семинары </h1>
             </div>
             <div class="events">
             	<?php 
