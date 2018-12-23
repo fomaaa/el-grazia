@@ -54,7 +54,7 @@ window.$ = $;
     });
 
     $('.tabs').sTabs();
-    
+
     $('.btn--burger').on('click', function(e) {
       e.preventDefault();
 
