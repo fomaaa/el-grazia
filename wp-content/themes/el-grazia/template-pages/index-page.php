@@ -155,7 +155,7 @@
                 <h1> <?php the_field("std_title"); ?></h1>
                 <p> <?php the_field("std_text"); ?></p>
               </article>
-              <a href="#" class="btn btn--primary btn--arrow">
+              <a href="/seminars" class="btn btn--primary btn--arrow">
                 <span> Перейти в обучающий центр </span>
               </a>
             </div>
