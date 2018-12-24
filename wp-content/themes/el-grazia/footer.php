@@ -94,7 +94,7 @@
                 <div class="location location--column">
                   <div class="location__title"> Центральныйофис </div>
                   <div class="location__info">
-                    <a href="tel:+7 (499) 120-54-59" class="location__phone"><?php the_field("central_phone", 'option'); ?></a>
+                    <a href="tel:<?php echo str_replace(" ","", get_field("central_phone", 'option')); ?>" class="location__phone"><?php the_field("central_phone", 'option'); ?></a>
                     <div class="location__place">
                       <span> <?php the_field("central_adress", 'option'); ?> </span>
                       <a  href="#mapModal" class="js-locationModal-centerOffice">Показать на карте</a>
@@ -104,7 +104,7 @@
                 <div class="location location--column">
                   <div class="location__title"> Обучающий центр </div>
                   <div class="location__info">
-                    <a href="tel:+7 (495) 332-16-11" class="location__phone"> <?php the_field("study_phone", 'option'); ?></a>
+                    <a href="tel:<?php echo str_replace(" ","", get_field("study_phone", 'option')); ?>" class="location__phone"> <?php the_field("study_phone", 'option'); ?></a>
                     <div class="location__place">
                       <span> <?php the_field("study_adress", 'option'); ?> </span>
                       <a href="#mapModal" class="js-locationModal-studyOffice">Показать на карте</a>
@@ -162,14 +162,14 @@
           <div class="location">
             <div class="location__title"> Центральный офис </div>
             <div class="location__info">
-              <a href="tel:<?php the_field("central_phone", 'option'); ?>" class="location__phone"><?php the_field("central_phone", 'option'); ?></a>
+              <a href="tel:<?php echo str_replace(" ","", get_field("central_phone", 'option')); ?>" class="location__phone"><?php the_field("central_phone", 'option'); ?></a>
               <a href="#" class="location__place">Показать на карте</a>
             </div>
           </div>
           <div class="location">
             <div class="location__title"> Обучающий центр </div>
             <div class="location__info">
-              <a href="tel:<?php the_field("study_phone", 'option'); ?>" class="location__phone"><?php the_field("study_phone", 'option'); ?></a>
+              <a href="tel:<?php echo str_replace(" ","", get_field("study_phone", 'option')); ?>" class="location__phone"><?php the_field("study_phone", 'option'); ?></a>
               <a href="#" class="location__place">Показать на карте</a>
             </div>
           </div>
