@@ -462,7 +462,7 @@ function load_more() {
 	)));
 }
 
- add_action( 'wp_ajax_nopriv_load_category', 'load_category');
+add_action( 'wp_ajax_nopriv_load_category', 'load_category');
 add_action( 'wp_ajax_load_category', 'load_category');
 
 function load_category() {
@@ -526,3 +526,4 @@ function getProductCatTree($id, $data = array()){
 
 	return $data;
 }
+

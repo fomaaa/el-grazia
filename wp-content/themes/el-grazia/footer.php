@@ -3,17 +3,19 @@
           <div class="container">
             <div class="footer__inner">
               <div class="footer__left">
-	            <?php
-	                 wp_nav_menu( array(
-	                   'menu'            => 'main_menu',
-	                   'menu_class'      => 'menu js-splitter',
-	                   'echo'            => true,
-	                   'fallback_cb'     => 'wp_page_menu',
-	                   'items_wrap'      => '<ul id="%1$s" ata-columns="2" data-direction="horizontal" class="%2$s">%3$s</ul>',
-	                   'depth'           => 0,
-	                 ) );
-	            ?>
-              </div>
+            <nav class="nav">
+              <ul class="menu js-splitter" data-columns="2" data-direction="horizontal">
+                <?php
+                 $menu = get_field('main_menu', 'option'); 
+
+                 foreach ($menu as $key => $item) : ?>
+                    <li class="menu__item">
+                      <a href="<?php the_permalink($item['page']) ?>" class="menu__link"> <?php echo $item['name'] ?></a>
+                    </li>
+                 
+                <?php endforeach; ?>
+              </ul>
+            </nav>              </div>
               <div class="footer__center">
                 <div class="logo">
                   <a href="/">
@@ -141,8 +143,9 @@
         </div>
       </footer>
       <div class="menuBox">
+        <div class="menuBox__top">
             <nav class="nav">
-              <ul class="menu">
+              <ul class="menu js-splitter" data-columns="2" data-direction="horizontal">
                 <?php
                  $menu = get_field('main_menu', 'option'); 
 
@@ -154,6 +157,7 @@
                 <?php endforeach; ?>
               </ul>
             </nav>
+          </div>
         <div class="menuBox__bottom">
           <div class="location">
             <div class="location__title"> Центральный офис </div>

@@ -1,9 +1,8 @@
 <!doctype html>
-<html>
+<html lang="ru">
 
   <head>
     <meta charset="utf-8" />
-    <!-- <title><?php the_title(); ?></title> -->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
@@ -96,7 +95,7 @@
                  $menu = get_field('main_menu', 'option'); 
 
                  foreach ($menu as $key => $item) : ?>
-                    <li class="menu__item <?php if ($item['page'] == 313) echo 'menu__parent' ?>">
+                    <li class="menu__item <?php if ($item['page'] == 313 || !empty($item['add_menu'])) echo 'menu__parent' ?>">
                       <a href="<?php the_permalink($item['page']) ?>" class="menu__link"> <?php echo $item['name'] ?></a>
                       <?php if ($item['page'] == 313) : ?>
                       <ul class="menuChild">
@@ -131,7 +130,15 @@
                           </li>
                         <?php endforeach; ?>
                       </ul>
-                      <?php endif; ?>
+                    <?php  elseif (!empty($item['add_menu'])) : ?>
+                      <ul class="menuChild">
+                      <?php foreach ($item['add_menu'] as $subItem) : ?>
+                            <li class="menuChild__item">
+                              <a href="<?php echo get_the_permalink($subItem['page']); ?>"><?php echo  $subItem['name'] ?></a>
+                            </li>
+                      <?php endforeach; ?>
+                      </ul>
+                    <?php endif; ?>
                     </li>
                  
                 <?php endforeach; ?>
@@ -197,18 +204,19 @@
           </div>
           <div class="header__bottom">
 
-            <?php
-                 // wp_nav_menu( array(
-                 //   'menu'            => 'main_menu',
-                 //   'container'       => 'nav',
-                 //   'container_class' => 'nav',
-                 //   'menu_class'      => 'menu',
-                 //   'echo'            => true,
-                 //   'fallback_cb'     => 'wp_page_menu',
-                 //   'items_wrap'      => '<ul id="%1$s" class="%2$s menu">%3$s</ul>',
-                 //   'depth'           => 0,
-                 // ) );
-            ?>
+            <nav class="nav">
+              <ul class="menu">
+                <?php
+                 $menu = get_field('main_menu', 'option'); 
+
+                 foreach ($menu as $key => $item) : ?>
+                    <li class="menu__item">
+                      <a href="<?php the_permalink($item['page']) ?>" class="menu__link"> <?php echo $item['name'] ?></a>
+                    </li>
+                 
+                <?php endforeach; ?>
+              </ul>
+            </nav>
           </div>
         </div>
       </header>
