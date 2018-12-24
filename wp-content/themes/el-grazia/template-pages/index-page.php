@@ -372,7 +372,7 @@
               <?php
                   $posts = query_posts(array( 
                       'post_type' => 'news',
-                      'posts_per_page'  => 999,
+                      'posts_per_page'  => 12,
                       'orderby' => 'id',
                       'order' => 'desc' )
                   );

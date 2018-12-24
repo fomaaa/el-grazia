@@ -137,18 +137,6 @@
                 <?php endforeach; ?>
               </ul>
             </nav>
-          	<?php
-                 // wp_nav_menu( array(
-                 //   'menu'            => 'main_menu',
-                 //   'container'       => 'nav',
-                 //   'container_class' => 'nav',
-                 //   'menu_class'      => 'menu',
-                 //   'echo'            => true,
-                 //   'fallback_cb'     => 'wp_page_menu',
-                 //   'items_wrap'      => '<ul id="%1$s" class="%2$s menu">%3$s</ul>',
-                 //   'depth'           => 0,
-                 // ) );
-            ?>
           </div>
         </div>
       </header>

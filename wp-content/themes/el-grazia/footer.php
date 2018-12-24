@@ -141,18 +141,19 @@
         </div>
       </footer>
       <div class="menuBox">
-      	    <?php
-                 wp_nav_menu( array(
-                   'menu'            => 'main_menu',
-                   'container'       => 'div',
-                   'container_class' => 'menuBox__top',
-                   'menu_class'      => 'menu js-splitter',
-                   'echo'            => true,
-                   'fallback_cb'     => 'wp_page_menu',
-                   'items_wrap'      => '<ul id="%1$s" ata-columns="2" data-direction="horizontal" class="%2$s">%3$s</ul>',
-                   'depth'           => 0,
-                 ) );
-            ?>
+            <nav class="nav">
+              <ul class="menu">
+                <?php
+                 $menu = get_field('main_menu', 'option'); 
+
+                 foreach ($menu as $key => $item) : ?>
+                    <li class="menu__item">
+                      <a href="<?php the_permalink($item['page']) ?>" class="menu__link"> <?php echo $item['name'] ?></a>
+                    </li>
+                 
+                <?php endforeach; ?>
+              </ul>
+            </nav>
         <div class="menuBox__bottom">
           <div class="location">
             <div class="location__title"> Центральный офис </div>
