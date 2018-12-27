@@ -44,11 +44,13 @@
 <?php else :?>
   <?php if (!is_product()) : ?>
     <?php 
+      $cate = get_queried_object();
+      $cateID = $cate->term_id;
 
-      $category = single_term_title("", false);;
-      $current_cat = get_terms('hierarchical=1&hide_empty=0&taxonomy=product_cat&slug='. $category);
+      $current_cat = get_terms('hierarchical=1&hide_empty=0&taxonomy=product_cat&term_taxonomy_id='. $cateID);
       $tree = getProductCatTree($current_cat[0]->term_taxonomy_id);
       $tree = array_reverse($tree);
+
 
       if (!empty($current_cat[0]->parent)) {
         $parent_cat = get_term($current_cat[0]->parent);
@@ -106,7 +108,6 @@
                 </div>
                 <div class="filter__body">
                   <?php   
-                    $category = single_term_title("", false);
                     $prod_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=0');
                     foreach ($prod_terms as $prod_term) :
                   ?>
