@@ -74,71 +74,71 @@
 		}
 	}
 
-	.form__bottom {
-		display: flex;
-		align-items: center;
-		width: 100%;
-		margin: 30px -20px 0;
+}
+
+.form__bottom {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: 30px -20px 0;
+
+	@include r($md-breakpoint) {
+		margin-top: 24px;
+		position: relative;
+		padding-left: 263px;
+		display: block;
+	}
+
+	@include r($xs-breakpoint) {
+		padding-left: 9px;
+		margin-top: 16px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	> div {
+		margin: 0 30px;
+
+		@include r($xs-breakpoint) {
+			margin: 0;
+		}
+	}
+
+	.form__button {
 
 		@include r($md-breakpoint) {
-			margin-top: 24px;
-			position: relative;
-			padding-left: 263px;
-			display: block;
+			position: absolute;
+			top: 3px;
+			left: 0;
 		}
 
 		@include r($xs-breakpoint) {
-			padding-left: 9px;
-			margin-top: 16px;
-			margin-left: 0;
-			margin-right: 0;
-		}
+			position: relative;
+			top: 0;
+			margin-bottom: 24px;
 
-		> div {
-			margin: 0 30px;
-
-			@include r($xs-breakpoint) {
-				margin: 0;
-			}
-		}
-
-		.form__button {
-
-			@include r($md-breakpoint) {
-				position: absolute;
-				top: 3px;
-				left: 0;
-			}
-
-			@include r($xs-breakpoint) {
-				position: relative;
-				top: 0;
-				margin-bottom: 24px;
-
-				.btn {
-					width: 100%;
-				}
-			}
-		}
-
-		.form__rules {
-			max-width: 375px;
-
-			@include r($md-breakpoint) {
-				max-width: 100%;
-
-				&:not(:last-child) {
-					margin-bottom: 8px;
-				}
-			}
-
-			@include r($xs-breakpoint) {
-
-			    br {
-				    display: none;
-			    }
+			.btn {
+				width: 100%;
 			}
 		}
 	}
 
+	.form__rules {
+		max-width: 375px;
+
+		@include r($md-breakpoint) {
+			max-width: 100%;
+
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+
+		@include r($xs-breakpoint) {
+
+			br {
+				display: none;
+			}
+		}
+	}
 }
