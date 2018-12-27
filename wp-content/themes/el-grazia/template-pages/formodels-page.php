@@ -36,7 +36,7 @@
                     <div class="card__body">
                       <div class="card__date"> <?php the_field("dates", $id); ?></div>
                       <div class="card__title"><?php echo get_the_title($id) ?></div>
-                      <a href="" class="btn btn--gray">Подробнее</a>
+                      <a href="<?php echo get_post_permalink($event['event']) ?>" class="btn btn--gray">Подробнее</a>
                     </div>
                   </div>
                 </div>

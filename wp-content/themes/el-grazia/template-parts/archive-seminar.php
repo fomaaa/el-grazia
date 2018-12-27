@@ -69,7 +69,7 @@
 				                                      <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-price"></use>
 				                                    </svg>
 				                                  </div>
-				                                  <div class="infoItem__value"><?php the_field('price') ?> ₽</div>
+				                                  <div class="infoItem__value" data-badge=" <?php the_field("price_add"); ?>"><?php the_field('price') ?> ₽</div>
 				                                </div>
 				                              </li>
 				                              <li>
