@@ -68,8 +68,8 @@
                     <li>
                       <b>Продолжительность курса:</b>  <?php the_field("dates"); ?> </li>
                     <li>
-                      <b>Стоимость обучения:</b> <?php if (get_field('old price')) : ?> <span class="oldPrice"> <?php the_field("old price"); ?> руб</span> <?php endif; ?>
-                      <span class="newPrice"><?php the_field("price"); ?> руб</span>
+                      <b>Стоимость обучения:</b> <?php if (get_field('old price')) : ?> <span class="oldPrice"> <?php the_field("old price"); ?> руб</span> <?php endif; ?> 
+                      <span class="newPrice"><?php the_field("price"); ?> руб  <?php the_field("price_add"); ?></span>
                     </li>
                     <li>
                       <a href="/seminar">Расписание других курсов</a>
