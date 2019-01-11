@@ -17,7 +17,7 @@
           </div>
           <div class="card__body">
             <div class="card__title"><?php the_title(); ?></div>
-            <div class="card__subtitle">(Мезотерапия)</div>
+            <div class="card__subtitle"> <?php the_field("subtitle"); ?></div>
           </div>
         </div>
       </li>
