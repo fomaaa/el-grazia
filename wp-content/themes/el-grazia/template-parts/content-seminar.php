@@ -66,13 +66,13 @@
                        <?php the_field("for_whom"); ?>
                     </li>
                     <li>
-                      <b>Продолжительность курса:</b>  <?php the_field("dates"); ?> </li>
+                      <b>Продолжительность курса:</b>  <?php the_field("time"); ?> </li>
                     <li>
-                      <b>Стоимость обучения:</b> <?php if (get_field('old price')) : ?> <span class="oldPrice"> <?php the_field("old price"); ?> руб</span> <?php endif; ?> 
-                      <span class="newPrice"><?php the_field("price"); ?> руб  <?php the_field("price_add"); ?></span>
+                      <b>Стоимость обучения:</b> <?php if (get_field('old price')) : ?> <span class="oldPrice"> <?php the_field("old price"); ?> </span> <?php endif; ?> 
+                      <span class="newPrice"><?php the_field("price"); ?> <?php if (!preg_match("/[а-я]/i", get_field('price'))) echo ' руб.'; ?>  <?php the_field("price_add"); ?></span>
                     </li>
                     <li>
-                      <a href="/seminar">Расписание других курсов</a>
+                      <a href="/seminars">Расписание других курсов</a>
                     </li>
                   </ul>
                 </div>

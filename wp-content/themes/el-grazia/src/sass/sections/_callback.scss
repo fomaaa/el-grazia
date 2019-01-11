@@ -64,18 +64,19 @@
 	}
 
 	.form__button {
-		padding: 0 12px;
-		margin-top: 46px;
+		//padding: 0 12px;
+		//margin-top: 46px;
+		width: auto;
 
 		@include r($md-breakpoint) {
-			margin-top: 30px;
+			//margin-top: 30px;
 		}
 
 		@include r($xs-breakpoint) {
-			margin-top: 25px;
+			//margin-top: 25px;
 
 			.btn {
-				width: 100%;
+				//width: 100%;
 			}
 		}
 	}

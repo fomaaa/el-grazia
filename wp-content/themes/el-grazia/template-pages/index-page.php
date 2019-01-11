@@ -1,12 +1,12 @@
-<?php 
+<?php
 /* Template Name: Главная странциа */
-  get_header(); 
+  get_header();
 ?>
       <div class="pageWrapper">
         <div class="section section--banner">
           <div class="swiper-container bannerGallery">
             <div class="swiper-wrapper">
-            	<?php 
+            	<?php
             	$block = get_field("slider");
             	if ($block):
             		foreach($block as $item) :
@@ -25,7 +25,7 @@
           <div class="container bannerThumbs__container">
             <div class="swiper-container bannerThumbs">
               <div class="swiper-wrapper">
-              	<?php 
+              	<?php
               	if ($block):
               		foreach($block as $item) :
               	?>
@@ -43,13 +43,13 @@
           <div class="container section__inner">
             <div class="section__left">
               <ul class="advantagesList">
-              	<?php 
+              	<?php
               	$block = get_field("advantages");
               	if ($block):
               		foreach($block as $key => $item) :
               	?>
 	                <li class="advantages__item">
-	                  <?php 
+	                  <?php
 	                  	!empty($item['prefix']) ? $block[$key]['alt']  = $item['prefix'] : $block[$key]['alt'] = "";
 	                  	 $block[$key]['alt'] .= " " . $item['number'] . " " .  $item['text'];
 	                   ?>
@@ -66,7 +66,7 @@
               </ul>
               <div class="advantagesSlider swiper-container">
                 <div class="swiper-wrapper">
-                	<?php 
+                	<?php
                 	if ($block):
                 		foreach($block as $key => $item) :
                 	?>
@@ -101,12 +101,12 @@
               <div class="products">
                 <div class="section__title">Продукция</div>
                 <div class="grid gridDesktop--3 gridTablet--2">
-                  <?php   
+                  <?php
                     $prod_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=0');
                     foreach ($prod_terms as $prod_term) :
                       if ($prod_term->parent == "0") :
                         $thumb_id = get_woocommerce_term_meta( $prod_term->term_id, 'thumbnail_id', true );
-                        $term_img = wp_get_attachment_url(  $thumb_id ); 
+                        $term_img = wp_get_attachment_url(  $thumb_id );
                   ?>
                     <div class="grid__item">
                       <div class="card card--product">
@@ -129,11 +129,11 @@
                 <div class="section__title">Бренды</div>
                 <ul class="brandsList">
 				         <?php
-        				    $posts = query_posts(array( 
+        				    $posts = query_posts(array(
         				      'post_type' => 'brands',
         				      'posts_per_page'  => 999,
         				      'orderby' => 'date_add',
-        				      'order' => 'ASC' 
+        				      'order' => 'ASC'
           				    )
           				  );
 
@@ -161,12 +161,12 @@
             </div>
             <div class="section__right">
               <ul class="advantagesList js-splitter" data-columns="2">
-              	<?php 
+              	<?php
               	$block = get_field("std_advantages");
               	if ($block):
               		foreach($block as $key => $item) :
               	?>
-              		<?php 
+              		<?php
 	                  	!empty($item['prefix']) ? $block[$key]['alt']  = $item['prefix'] : $block[$key]['alt'] = "";
 	                  	 $block[$key]['alt'] .= " " . $item['number'] . " " .  $item['text'];
 	                ?>
@@ -182,7 +182,7 @@
               </ul>
               <div class="advantagesSlider swiper-container">
                 <div class="swiper-wrapper">
-                	<?php 
+                	<?php
                 	if ($block):
                 		foreach($block as $item) :
                 	?>
@@ -205,12 +205,12 @@
         <div class="section section--cards section--gray">
           <div class="container section__inner">
             <div class="grid gridDesktop--3">
-            	<?php 
+            	<?php
             	$block = get_field("std_items");
             	if ($block):
             		foreach($block as $item) :
             	?>
-            	<?php 
+            	<?php
             		$terms = get_the_tags($item->ID);
             	 ?>
                 <div class="grid__item">
@@ -232,7 +232,7 @@
                                     <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-price"></use>
                                   </svg>
                                 </div>
-                                <div class="infoItem__value"><?php the_field("price", $item->ID); ?> ₽</div>
+                                          <div class="infoItem__value" data-badge=" <?php the_field("price_add", $item->ID); ?>"><span <?php if (!preg_match("/[а-я]/i", get_field('price', $item->ID))) echo 'class="ruble"'; ?> ><?php the_field('price', $item->ID) ?> </span></div>
                               </div>
                             </li>
                             <li>
@@ -242,7 +242,7 @@
                                     <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-clock"></use>
                                   </svg>
                                 </div>
-                                <div class="infoItem__value"><?php the_field('time', $item->ID) ?></div>
+                                <div class="infoItem__value"><?php the_field('start_time', $item->ID) ?></div>
                               </div>
                             </li>
                           </ul>
@@ -262,7 +262,7 @@
             </div>
             <div class="gridSlider swiper-container">
               <div class="swiper-wrapper">
-              	<?php 
+              	<?php
               	if ($block):
               		foreach($block as $item) :
               			$terms = get_the_terms($item->ID, 'seminar');
@@ -287,7 +287,7 @@
 		                                  <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-price"></use>
 		                                </svg>
 		                              </div>
-		                              <div class="infoItem__value"><?php the_field("price", $item->ID); ?> ₽</div>
+		                              <div class="infoItem__value"><span><?php the_field("price", $item->ID); ?> ₽</span></div>
 		                            </div>
 		                          </li>
 		                          <li>
@@ -370,7 +370,7 @@
             <div class="carouselBody swiper-container">
               <div class="swiper-wrapper">
               <?php
-                  $posts = query_posts(array( 
+                  $posts = query_posts(array(
                       'post_type' => 'news',
                       'posts_per_page'  => 12,
                       'orderby' => 'id',
@@ -384,7 +384,9 @@
 	                    <a href="<?php echo get_permalink() ?>" class="card__link"></a>
 	                    <div class="card__photo" style="background-image: url('<?php echo get_the_post_thumbnail_url($post, 'medium') ?>');"></div>
 	                    <div class="card__body">
+                      <?php if (get_field("date")) : ?>
 	                      <div class="card__date dateCalendar"> <?php the_field("date"); ?></div>
+                      <?php endif; ?>
 	                      <div class="card__title"><?php the_title(); ?></div>
 	                    </div>
 	                  </div>

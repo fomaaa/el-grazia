@@ -23,10 +23,8 @@
 	&__right {
 		width: percentage(440/1200);
 		margin-left: percentage(78/1200);
-		padding-top: 63px;
 
 		@include r($md-breakpoint) {
-			padding-top: 0;
 			width: percentage(276/720);
 			margin-left: auto;
 		}

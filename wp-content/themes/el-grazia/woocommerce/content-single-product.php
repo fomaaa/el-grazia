@@ -196,6 +196,7 @@ defined( 'ABSPATH' ) || exit;
               <article>
 					       <?php the_content(); ?>
               </article>
+              <?php if (!empty(get_field('сomposition')['0'])) : ?>
               <div class="goodComposition">
                 <div class="goodComposition__title"> Состав: </div>
                 <ul class="goodComposition__list js-splitter" data-columns="2">
@@ -209,12 +210,15 @@ defined( 'ABSPATH' ) || exit;
                 	<?php endforeach; endif; ?>
                 </ul>
               </div>
-              <div class="goodInfo">
-                <div class="goodInfo__title"> Активные ингридиенты: </div>
-                <div class="goodInfo__body">
- 					        <?php the_field("active"); ?>
+              <?php endif; ?>
+              <?php if (get_field('active')) : ?>
+                <div class="goodInfo">
+                  <div class="goodInfo__title"> Активные ингридиенты: </div>
+                  <div class="goodInfo__body">
+   					        <?php the_field("active"); ?>
+                  </div>
                 </div>
-              </div>
+              <?php endif; ?>
                <?php if (get_field('face') || get_field('neck') || get_field('neckline')) : ?>
               <div class="applicationArea hiddenTablet">
                 <div class="applicationArea__figure" style="background-image: url('<?php echo get_template_directory_uri() ?>/img/woman.png');"></div>

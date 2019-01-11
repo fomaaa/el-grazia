@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* Template Name: Семинары */
-  get_header(); 
+  get_header();
 ?>
 
       <div class="pageWrapper">
@@ -23,14 +23,14 @@
               <h1> <?php the_title(); ?> </h1>
             </div>
             <div class="events">
-            	<?php 
+            	<?php
             	$terms = get_terms( array(
 				    'taxonomy' => 'seminar',
 				    'hide_empty' => false,
-				) ); 
+				) );
 
 				?>
-				<?php if ($terms) : 
+				<?php if ($terms) :
 					foreach ($terms as $term) :
 						if ($term->count > 0) :
 				?>
@@ -38,7 +38,7 @@
 	                <div class="events__title"> <?php echo $term->name; ?> </div>
 	                <div class="grid gridDesktop--3 gridTablet--2 gridMobile--1">
 				        <?php
-			                  $posts = query_posts(array( 
+			                  $posts = query_posts(array(
 			                    'post_type' => 'seminar',
 			                    'posts_per_page'  => 999,
 			                    'tax_query' => array(
@@ -73,7 +73,7 @@
 				                                      <use xlink:href="img/sprite.svg#icon-price"></use>
 				                                    </svg>
 				                                  </div>
-				                                  <div class="infoItem__value"><?php the_field('price') ?> ₽</div>
+				                                  <div class="infoItem__value"><span><?php the_field('price') ?> ₽</span></div>
 				                                </div>
 				                              </li>
 				                              <li>

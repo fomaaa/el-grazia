@@ -54,10 +54,10 @@
             endif;
 
       			$args = array(
-      					'show_all'     => false, // показаны все страницы участвующие в пагинации
-      					'end_size'     => 1,     // количество страниц на концах
-      					'mid_size'     => 1,     // количество страниц вокруг текущей
-      					'prev_next'    => true,  // выводить ли боковые ссылки "предыдущая/следующая страница".
+      					'show_all'     => false, 
+      					'end_size'     => 1,     
+      					'mid_size'     => 1,     
+      					'prev_next'    => true, 
       					'prev_text'    => '<svg class="icon icon-arrow_small_right"><use xlink:href="'. get_template_directory_uri() .'/img/sprite.svg#icon-arrow_small_left"></use></svg>',
       					'next_text'    => '<svg class="icon icon-arrow_small_right"><use xlink:href="'. get_template_directory_uri() .'/img/sprite.svg#icon-arrow_small_right"></use></svg>',
       			);
