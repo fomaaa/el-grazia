@@ -72,6 +72,7 @@
 				                                  <div class="infoItem__value" data-badge=" <?php the_field("price_add"); ?>"><span <?php if (!preg_match("/[а-я]/i", get_field('price'))) echo 'class="ruble"'; ?> ><?php the_field('price') ?> </span></div>
 				                                </div>
 				                              </li>
+				                              <?php if (get_field('start_time')) : ?>
 				                              <li>
 				                                <div class="infoItem">
 				                                  <div class="infoItem__icon">
@@ -82,6 +83,7 @@
 				                                  <div class="infoItem__value"><?php the_field('start_time') ?></div>
 				                                </div>
 				                              </li>
+				                              <?php endif; ?>
 				                            </ul>
 				                          </div>
 				                          <div class="card__author">
