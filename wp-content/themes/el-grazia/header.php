@@ -216,8 +216,50 @@
                  $menu = get_field('main_menu', 'option'); 
 
                  foreach ($menu as $key => $item) : ?>
-                    <li class="menu__item">
+                    <li class="menu__item <?php if ($item['page'] == 313 || !empty($item['add_menu'])) echo 'menu__parent' ?>">
                       <a href="<?php the_permalink($item['page']) ?>" class="menu__link"> <?php echo $item['name'] ?></a>
+                      <?php if ($item['page'] == 313) : ?>
+                      <ul class="menuChild">
+                        <?php 
+                          $prod_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=0');
+                          foreach ($prod_terms as $prod_term) :
+
+
+                        ?>
+                          <li class="menuChild__item">
+                            <a href="<?php echo get_term_link($prod_term); ?>"><?php echo  $prod_term->name ?></a>
+                            <ul class="subMenu">
+                              <?php $child_terms = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $prod_term->term_id); ?>
+                              <?php foreach ($child_terms as $child_term) : ?>
+                              <li class="subMenu__item">
+                                <a href="<?php echo get_term_link($child_term); ?>"><?php echo $child_term->name ?></a>
+                                <ul class="subMenu">
+                                  <?php 
+                                    $lastChilds = get_terms('hierarchical=1&taxonomy=product_cat&hide_empty=0&orderby=id&parent=' . $child_term->term_id);
+                                    if ($lastChilds) :
+                                    foreach  ($lastChilds as $lastChild) :
+                                  ?>
+                                    <li class="subMenu__item">
+                                      <a href="<?php echo get_term_link($lastChild) ?>"><?php echo $lastChild->name; ?></a>
+                                    </li>
+                                  <?php endforeach; endif; ?>
+                                </ul>
+                              </li>
+                              <?php endforeach; ?>
+      
+                            </ul>
+                          </li>
+                        <?php endforeach; ?>
+                      </ul>
+                    <?php  elseif (!empty($item['add_menu'])) : ?>
+                      <ul class="menuChild">
+                      <?php foreach ($item['add_menu'] as $subItem) : ?>
+                            <li class="menuChild__item">
+                              <a href="<?php echo get_the_permalink($subItem['page']); ?>"><?php echo  $subItem['name'] ?></a>
+                            </li>
+                      <?php endforeach; ?>
+                      </ul>
+                    <?php endif; ?>
                     </li>
                  
                 <?php endforeach; ?>
