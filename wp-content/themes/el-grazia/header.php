@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fff" />
     <meta name="format-detection" content="telephone=no" />
+    <?php if (get_field('seo_description')) : ?>
+    	<meta name="description" content="<?php the_field('seo_description') ?>">
+	<?php endif ?>
+    <?php if (get_field('keywords')) : ?>
+		<meta name="keywords" content="<?php the_field('keywords') ?>">
+	<?php endif ?>
     <link rel="shortcut icon" type="image/ico" href="<?php echo get_template_directory_uri() ?>/img/favicon.ico">
     <?php wp_head(); ?>
     <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri() ?>/css/app.css" />
