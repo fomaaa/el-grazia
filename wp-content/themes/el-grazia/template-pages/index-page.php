@@ -232,7 +232,7 @@
                                     <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-price"></use>
                                   </svg>
                                 </div>
-                                <div class="infoItem__value"><span><?php the_field("price", $item->ID); ?> ₽</span></div>
+                                          <div class="infoItem__value" data-badge=" <?php the_field("price_add", $item->ID); ?>"><span <?php if (!preg_match("/[а-я]/i", get_field('price', $item->ID))) echo 'class="ruble"'; ?> ><?php the_field('price', $item->ID) ?> </span></div>
                               </div>
                             </li>
                             <li>
@@ -242,7 +242,7 @@
                                     <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-clock"></use>
                                   </svg>
                                 </div>
-                                <div class="infoItem__value"><?php the_field('time', $item->ID) ?></div>
+                                <div class="infoItem__value"><?php the_field('start_time', $item->ID) ?></div>
                               </div>
                             </li>
                           </ul>
@@ -384,7 +384,9 @@
 	                    <a href="<?php echo get_permalink() ?>" class="card__link"></a>
 	                    <div class="card__photo" style="background-image: url('<?php echo get_the_post_thumbnail_url($post, 'medium') ?>');"></div>
 	                    <div class="card__body">
+                      <?php if (get_field("date")) : ?>
 	                      <div class="card__date dateCalendar"> <?php the_field("date"); ?></div>
+                      <?php endif; ?>
 	                      <div class="card__title"><?php the_title(); ?></div>
 	                    </div>
 	                  </div>

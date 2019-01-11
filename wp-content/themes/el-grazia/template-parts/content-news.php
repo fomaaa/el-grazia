@@ -14,7 +14,9 @@
         </div>
         <div class="section section--newsInner">
           <div class="container section__inner">
-            <div class="dateCalendar dateCalendar--md">  <?php the_field("date"); ?> </div>
+            <?php if (get_field("date")) : ?>
+              <div class="dateCalendar dateCalendar--md">  <?php the_field("date"); ?> </div>
+            <?php endif; ?>
             <article>
               <h1><?php the_title(); ?></h1>
               <div class="companyGallery js-gallery">

@@ -69,7 +69,7 @@
 				                                      <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-price"></use>
 				                                    </svg>
 				                                  </div>
-				                                  <div class="infoItem__value" data-badge=" <?php the_field("price_add"); ?>"><span><?php the_field('price') ?> ₽</span></div>
+				                                  <div class="infoItem__value" data-badge=" <?php the_field("price_add"); ?>"><span <?php if (!preg_match("/[а-я]/i", get_field('price'))) echo 'class="ruble"'; ?> ><?php the_field('price') ?> </span></div>
 				                                </div>
 				                              </li>
 				                              <li>
@@ -79,7 +79,7 @@
 				                                      <use xlink:href="<?php echo get_template_directory_uri() ?>/img/sprite.svg#icon-clock"></use>
 				                                    </svg>
 				                                  </div>
-				                                  <div class="infoItem__value"><?php the_field('time') ?></div>
+				                                  <div class="infoItem__value"><?php the_field('start_time') ?></div>
 				                                </div>
 				                              </li>
 				                            </ul>
