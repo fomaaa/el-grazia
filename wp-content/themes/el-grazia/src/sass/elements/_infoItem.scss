@@ -31,14 +31,21 @@
 		@include r($xs-breakpoint) {
 
 		}
+
+
+		> span {
+			display: block;
+		}
+
 		&:after {
 			content: attr(data-badge);
-			display: block;
+			display: inline;
 			background-color: #f6f6f6;
 			border-radius: 3px;
 			font-weight: 300;
 			font-size: 12px;
 			color: #797979;
+			white-space: normal;
 
 			@include r($xs-breakpoint) {
 				position: absolute;
