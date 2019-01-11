@@ -24,6 +24,11 @@
 			opacity: .10;
 			visibility: visible;
 		}
+
+		.card__photo {
+			filter:grayscale(0);
+			opacity: 1;
+		}
 	}
 
 	&:before {
@@ -49,6 +54,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		filter: grayscale(1);
+		opacity: .7;
+		transition: .3s all;
 
 		@include r($md-breakpoint) {
 			min-height: 57px;
