@@ -125,7 +125,7 @@
               </div>
               </div>
               <div class="textBlock textBlock--xs">
-                <p>  <?php the_field("text", 'option'); ?> </p>
+                <p>  <a href="/privacy-policy/"><?php the_field("text", 'option'); ?> </a></p>
               </div>
             </div>
             <div class="footer__right">
