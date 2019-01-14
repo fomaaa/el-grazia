@@ -1,0 +1,50 @@
+2019-01-14T09:00:57+00:00 CRITICAL syntax error, unexpected 'print_r' (T_STRING), expecting ',' or ';' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php на строке 25
+
+2019-01-14T09:08:46+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php:36
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require()
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(647): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\grazia.loc\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\archive.php(19): get_template_part('template-parts/...', 'seminar')
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\grazia.loc\index.php(17): require('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php на строке 36
+
+2019-01-14T09:09:10+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Post as array in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php:39
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require()
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(647): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\grazia.loc\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\archive.php(19): get_template_part('template-parts/...', 'seminar')
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\grazia.loc\index.php(17): require('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php на строке 39
+
+2019-01-14T09:09:26+00:00 CRITICAL Uncaught Error: Function name must be a string in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php:82
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require()
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(647): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\grazia.loc\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\archive.php(19): get_template_part('template-parts/...', 'seminar')
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\grazia.loc\index.php(17): require('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php на строке 82
+
+2019-01-14T09:09:38+00:00 CRITICAL Uncaught Error: Function name must be a string in C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php:82
+Stack trace:
+#0 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(690): require()
+#1 C:\OSPanel\domains\grazia.loc\wp-includes\template.php(647): load_template('C:\\OSPanel\\doma...', false)
+#2 C:\OSPanel\domains\grazia.loc\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\archive.php(19): get_template_part('template-parts/...', 'seminar')
+#4 C:\OSPanel\domains\grazia.loc\wp-includes\template-loader.php(74): include('C:\\OSPanel\\doma...')
+#5 C:\OSPanel\domains\grazia.loc\wp-blog-header.php(19): require_once('C:\\OSPanel\\doma...')
+#6 C:\OSPanel\domains\grazia.loc\index.php(17): require('C:\\OSPanel\\doma...')
+#7 {main}
+  thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php на строке 82
+
