@@ -23,6 +23,7 @@
             $block = get_field("seminars", 266);
             if ($block):
             	foreach($block as $item) :
+            		if (!empty($item['seminar'][0])) : 
             ?>
 	              <div class="events__item">
 	                <div class="events__title"> <?php echo $item['cat']->name; ?> </div>
@@ -33,9 +34,7 @@
 			              if (!empty($seminars[0])):
 			              	foreach($seminars as $seminar) :
 			              		$seminar = $seminar['sem'];
-					            // echo '<pre>';
-					            // print_r($seminar);
-					            // echo '</pre>';
+
 			              		$id = $seminar->ID;
 			              ?>
 				                  <div class="grid__item">
