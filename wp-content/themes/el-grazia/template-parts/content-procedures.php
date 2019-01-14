@@ -36,9 +36,10 @@
                         if (!empty($item['steps'])):
                           foreach($item['steps'] as $key => $step) :
                         ?>
+                        <?php if (!empty($step['steps'])): ?>
+                            
                           <div class="proceduresInfo__item">
                             <?php 
-                            if (!empty($step['steps'])):
                               foreach($step['steps'] as $index =>  $last) :
                             ?>
                               <div class="proceduresInfo__row">
@@ -49,8 +50,9 @@
                                 </div>
                               </div>
                             
-                            <?php endforeach; endif; ?>
+                            <?php endforeach;  ?>
                           </div>
+                          <?php endif; ?>
                         <?php endforeach; endif; ?>
                       </div>
                     </div>
