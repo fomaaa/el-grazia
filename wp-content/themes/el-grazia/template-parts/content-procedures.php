@@ -31,15 +31,16 @@
                     <div class="procedures__body i-content">
                       <img src="<?php echo $item['image'] ?>" alt="">
                       <p> <?php echo $item['text'] ?></p>
-                      <div class="proceduresInfo">
                         <?php 
-                        if (!empty($item['steps'])):
+                        if (!empty($item['steps'][0]['time'])): ?>
+                        
+                      <div class="proceduresInfo">
+                        <?php
                           foreach($item['steps'] as $key => $step) :
                         ?>
-                        <?php if (!empty($step['steps'])): ?>
-                            
                           <div class="proceduresInfo__item">
                             <?php 
+                            if (!empty($step['steps'])):
                               foreach($step['steps'] as $index =>  $last) :
                             ?>
                               <div class="proceduresInfo__row">
@@ -50,11 +51,11 @@
                                 </div>
                               </div>
                             
-                            <?php endforeach;  ?>
+                            <?php endforeach; endif; ?>
                           </div>
-                          <?php endif; ?>
-                        <?php endforeach; endif; ?>
+                        <?php endforeach;?>
                       </div>
+                        <?php endif; ?>
                     </div>
                   </div>
                 <?php endforeach; endif; ?>

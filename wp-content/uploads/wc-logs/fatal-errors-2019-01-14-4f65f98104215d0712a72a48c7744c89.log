@@ -50,3 +50,7 @@ Stack trace:
 
 2019-01-14T09:38:33+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php на строке 91
 
+2019-01-14T15:57:25+00:00 CRITICAL syntax error, unexpected '[', expecting ']' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\content-procedures.php на строке 35
+
+2019-01-14T15:58:16+00:00 CRITICAL syntax error, unexpected ']' в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\content-procedures.php на строке 35
+
