@@ -88,6 +88,7 @@
 
 	                </div>
 	              </div>
+	          <?php endif; ?>
             <?php endforeach; endif; ?>
 	        </div>
 <!--             <div class="events">
