@@ -48,3 +48,17 @@ Stack trace:
 #7 {main}
   thrown в C:\OSPanel\domains\grazia.loc\wp-content\themes\el-grazia\template-parts\archive-seminar.php на строке 82
 
+2019-01-14T09:38:35+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) в /home/c/cr11020/grazia/public_html/wp-content/themes/el-grazia/template-parts/archive-seminar.php на строке 91
+
+2019-01-14T09:38:38+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) в /home/c/cr11020/grazia/public_html/wp-content/themes/el-grazia/template-parts/archive-seminar.php на строке 91
+
+2019-01-14T09:39:59+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) в /home/c/cr11020/grazia/public_html/wp-content/themes/el-grazia/template-parts/archive-seminar.php на строке 91
+
+2019-01-14T09:40:00+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) в /home/c/cr11020/grazia/public_html/wp-content/themes/el-grazia/template-parts/archive-seminar.php на строке 91
+
+2019-01-14T09:40:10+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) в /home/c/cr11020/grazia/public_html/wp-content/themes/el-grazia/template-parts/archive-seminar.php на строке 91
+
+2019-01-14T09:40:11+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) в /home/c/cr11020/grazia/public_html/wp-content/themes/el-grazia/template-parts/archive-seminar.php на строке 91
+
+2019-01-14T09:40:13+00:00 CRITICAL syntax error, unexpected 'endforeach' (T_ENDFOREACH), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) в /home/c/cr11020/grazia/public_html/wp-content/themes/el-grazia/template-parts/archive-seminar.php на строке 91
+
