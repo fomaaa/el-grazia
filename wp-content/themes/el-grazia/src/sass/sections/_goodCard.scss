@@ -126,9 +126,11 @@
 
 		> .list-column {
 			padding: 0 27px;
+			width: 50%;
 
 			@include r($md-breakpoint) {
 				padding: 0 20px;
+				width: 100%;
 			}
 
 			@include r($xs-breakpoint) {
