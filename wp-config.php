@@ -20,13 +20,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'el-grazia');
+define('DB_NAME', 'cv85593_grazia');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'cv85593_grazia');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '148256grazia');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
