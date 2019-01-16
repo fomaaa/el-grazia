@@ -253,14 +253,14 @@ function BrandsPostType() {
 add_action( 'init', 'BrandsPostType', 100 );
 
 
-//Процедуры
+//Моделям
 
 
 function ProceduresPostType() {
 
 	$labels = array(
 		'name'                  => _x( 'Процедуры', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'Процедуры', 'Post Type Singular Name', 'text_domain' ),
+		'singular_name'         => _x( 'Моделям', 'Post Type Singular Name', 'text_domain' ),
 		'menu_name'             => __( 'Процедуры', 'text_domain' ),
 		'name_admin_bar'        => __( 'Процедуры', 'text_domain' ),
 		'archives'              => __( 'Архив', 'text_domain' ),
@@ -283,7 +283,7 @@ function ProceduresPostType() {
 		'use_featured_image'    => __( 'Использовать миниатюру', 'text_domain' ),
 	);
 	$args = array(
-		'label'                 => __( 'Процедуры', 'text_domain' ),
+		'label'                 => __( 'Моделям', 'text_domain' ),
 		'description'           => __( 'Post Type Description', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'thumbnail' ),
@@ -301,7 +301,7 @@ function ProceduresPostType() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'post',
 		'menu_icon' => 'dashicons-share-alt',
-		'rewrite' => array('slug' => 'procedures','with_front' => false),
+		'rewrite' => array('slug' => 'models','with_front' => false),
 	);
 	register_post_type( 'procedures', $args );
 }

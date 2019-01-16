@@ -34,6 +34,13 @@
 	                  <div class="card__photo" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>');"></div>
 	                  <div class="card__body">
 	                    <div class="card__title"><?php the_title(); ?></div>
+                      <div class="card__bottom">
+                        <div class="card__button">
+                          <a href="<?php the_permalink(); ?>" class="btn btn--gray text--center">Подробнее</a>
+                          <a href="<?php the_permalink(); ?>?type=semina&id=<?php echo get_the_ID(); ?>" class="btn btn--primary btn--sm">Зарегистрироваться</a>
+                        </div>
+                        
+                      </div>
 	                  </div>
 	                </div>
 	              </div>
