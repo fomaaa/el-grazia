@@ -152,5 +152,8 @@ b {
 }
 
 
-
+.ruble:after {
+	content: '\20BD';
+	font-family: 'MuseoSansCyrl';
+}
 
