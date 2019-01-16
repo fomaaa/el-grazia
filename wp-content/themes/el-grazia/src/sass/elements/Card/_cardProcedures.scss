@@ -43,4 +43,20 @@
 			max-height: 80px;
 		}
 	}
+
+	.card__button {
+		max-width: 280px;
+		margin: 30px auto 0;
+		position: relative;
+		z-index: 2;
+
+		.btn {
+			display: block;
+			width: 100%;
+
+			&:not(:first-child) {
+				margin-top: 9px;
+			}
+		}
+	}
 }
