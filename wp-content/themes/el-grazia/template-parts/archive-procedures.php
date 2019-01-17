@@ -29,23 +29,18 @@
 
 			       if ( have_posts() ) : while ( have_posts() ) : the_post();
 			    ?>
-	              <div class="grid__item">
-	                <div class="card  card--procedures">
-	                  <a href="<?php the_permalink() ?>" class="card__link"></a>
-	                  <div class="card__photo" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>');"></div>
-	                  <div class="card__body">
-                      <div class="card__date"> <?php the_field("dates"); ?></div>
-	                    <div class="card__title"><?php the_title(); ?></div>
-                      <div class="card__bottom">
-                        <div class="card__button">
-                          <a href="<?php the_permalink(); ?>" class="btn btn--gray text--center">Подробнее</a>
+              <div class="grid__item">
+                <div class="card card--model">
+                  <a href="<?php the_permalink() ?>" class="card__link"></a>
+                  <div class="card__photo" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>');"></div>
+                  <div class="card__body">
+                    <div class="card__date"><?php the_field("dates"); ?></div>
+                    <div class="card__title"><?php the_title(); ?></div>
+                      <a href="<?php the_permalink(); ?>" class="btn btn--gray text--center">Подробнее</a>
                           <a href="<?php the_permalink(); ?>?type=semina&id=<?php echo get_the_ID(); ?>" class="btn btn--primary btn--sm">Зарегистрироваться</a>
-                        </div>
-                        
-                      </div>
-	                  </div>
-	                </div>
-	              </div>
+                  </div>
+                </div>
+              </div>
 				<?php endwhile; endif; ?>
 				<?php wp_reset_query(); ?>
             </div>
