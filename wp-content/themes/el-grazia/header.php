@@ -14,6 +14,10 @@
 		<meta name="keywords" content="<?php the_field('keywords') ?>">
 	<?php endif ?>
     <link rel="shortcut icon" type="image/ico" href="<?php echo get_template_directory_uri() ?>/img/favicon.ico">
+    <?php if (get_field('seo_title')) : ?> 
+      <title><?php the_field('seo_title') ?></title>
+    <?php endif ?>
+    
     <?php wp_head(); ?>
     <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri() ?>/css/app.css" />
   </head>

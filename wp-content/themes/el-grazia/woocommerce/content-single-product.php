@@ -147,7 +147,7 @@ defined( 'ABSPATH' ) || exit;
             </div>
             <div class="section__right">
               <div class="goodCard__head">
-                <h1><?php the_title() ?> </h1>
+                <h1><?php get_h1() ?> </h1>
                 <h3><?php the_field('subtitle') ?></h3>
               </div>
               <div class="goodGallery js-gallery hiddenTablet">

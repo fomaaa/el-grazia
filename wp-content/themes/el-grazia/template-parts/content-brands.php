@@ -20,7 +20,7 @@
             <div class="brand">
               <div class="brand__head">
                 <div class="brand__title">
-                  <h1><?php the_title(); ?></h1>
+                  <h1><?php get_h1(); ?></h1>
                 </div>
                 <div class="brand__logo">
                   <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">

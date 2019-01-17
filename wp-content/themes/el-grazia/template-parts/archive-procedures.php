@@ -15,7 +15,7 @@
         <div class="section section--procedures">
           <div class="container section__inner">
             <div class="section__title">
-              <h1>Процедуры</h1>
+              <h1>Моделям</h1>
             </div>
             <div class="grid gridDesktop--3 gridTablet--2 gridMobile--1">
             	<?php

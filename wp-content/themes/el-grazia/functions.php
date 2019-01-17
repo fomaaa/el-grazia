@@ -377,11 +377,11 @@ function set_admin_menu() {
 	remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=seminar' );
 	remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=brands' );
 	remove_submenu_page( 'edit.php', 'edit.php?post_type=shop_order' );
-	// remove_menu_page( 'edit.php?post_type=acf-field-group');
+	remove_menu_page( 'edit.php?post_type=acf-field-group');
 	remove_menu_page( 'edit-comments.php' ); 
 	remove_menu_page( 'tools.php' ); 
 	remove_menu_page( 'themes.php' ); 
-	// remove_menu_page( 'plugins.php' ); 
+	remove_menu_page( 'plugins.php' ); 
 	remove_menu_page('edit.php?post_type=shop_order'); 
 }
 
@@ -527,3 +527,10 @@ function getProductCatTree($id, $data = array()){
 	return $data;
 }
 
+function get_h1() {
+	if (get_field('seo_h1')) {
+		the_field('seo_h1');
+	} else {
+		the_title();
+	}
+}

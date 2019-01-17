@@ -15,7 +15,7 @@
         <div class="section section--event">
           <div class="container section__inner">
             <div class="section__title">
-              <h1><?php the_title(); ?></h1>
+              <h1><?php get_h1(); ?></h1>
             </div>
             <div class="companyGallery js-gallery">
               <div class="companyGallery__main swiper-container js-gallery-main">
@@ -26,7 +26,7 @@
                     foreach($block as $item) :
                   ?>
                     <div class="swiper-slide">
-                      <div class="photo" style="background-image: url(' <?php echo $item['url'] ?>');"></div>
+                      <div class="photo"  style="background-image: url(' <?php echo $item['url'] ?>');"></div>
                     </div>
                    
                   <?php endforeach; endif; ?>

@@ -26,7 +26,7 @@
         <div class="section section--newsInner">
           <div class="container section__inner">
             <article>
-              <h1><?php the_title(); ?></h1>
+              <h1><?php get_h1(); ?></h1>
 				<?php 	the_content(); ?>
             </article>
           </div>

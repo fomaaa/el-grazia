@@ -26,7 +26,7 @@
 		                  <a href="<?php the_permalink(); ?>" class="card__link"></a>
 		                  <div class="card__photo" style="background-image: url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>');"></div>
 		                  <div class="card__body">
-		                    <div class="card__date dateCalendar"> <?php the_field("date"); ?></div>
+		                    <?php if (get_field('date')) : ?><div class="card__date dateCalendar"> <?php the_field("date"); ?></div> <?php endif ?>
 		                    <div class="card__title"><?php the_title(); ?></div>
 		                  </div>
 		                </div>

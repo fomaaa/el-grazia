@@ -15,7 +15,7 @@
         <div class="section section--procedures">
           <div class="container section__inner">
             <div class="section__title">
-              <h1> <?php the_title(); ?> </h1>
+              <h1> <?php get_h1(); ?> </h1>
             </div>
             <article>
               <div class="procedures">

@@ -18,7 +18,7 @@
               <div class="dateCalendar dateCalendar--md">  <?php the_field("date"); ?> </div>
             <?php endif; ?>
             <article>
-              <h1><?php the_title(); ?></h1>
+              <h1><?php get_h1(); ?></h1>
               <div class="companyGallery js-gallery">
                 <div class="companyGallery__main swiper-container js-gallery-main">
                   <div class="swiper-wrapper">
