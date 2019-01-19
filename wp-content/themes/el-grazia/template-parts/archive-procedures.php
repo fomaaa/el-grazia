@@ -37,7 +37,7 @@
                     <div class="card__date"><?php the_field("dates"); ?></div>
                     <div class="card__title"><?php the_title(); ?></div>
                       <a href="<?php the_permalink(); ?>" class="btn btn--gray text--center">Подробнее</a>
-                          <a href="<?php the_permalink(); ?>?type=semina&id=<?php echo get_the_ID(); ?>" class="btn btn--primary btn--sm">Зарегистрироваться</a>
+                          <a href="/registration/?type=model&id=<?php echo get_the_ID(); ?>" class="btn btn--primary btn--sm">Зарегистрироваться</a>
                   </div>
                 </div>
               </div>

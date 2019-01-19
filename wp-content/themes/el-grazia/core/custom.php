@@ -259,7 +259,7 @@ add_action( 'init', 'BrandsPostType', 100 );
 function ProceduresPostType() {
 
 	$labels = array(
-		'name'                  => _x( 'Процедуры', 'Post Type General Name', 'text_domain' ),
+		'name'                  => _x( 'Моделям', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Моделям', 'Post Type Singular Name', 'text_domain' ),
 		'menu_name'             => __( 'Процедуры', 'text_domain' ),
 		'name_admin_bar'        => __( 'Процедуры', 'text_domain' ),

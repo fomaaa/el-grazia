@@ -20,6 +20,7 @@
     
     <?php wp_head(); ?>
     <link rel="stylesheet" media="all" href="<?php echo get_template_directory_uri() ?>/css/app.css" />
+    
   </head>
 
   <body class="">
