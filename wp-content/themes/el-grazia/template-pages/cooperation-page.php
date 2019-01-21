@@ -22,7 +22,7 @@
               <h1><?php the_title(); ?></h1>
             </div>
             <div class="cooperation">
-              <div class="cooperation__photo" style="background-image: url('<?php the_field("image"); ?>');"></div>
+              <div class="cooperation__photo" style="background-image: url('<?php echo get_field("image")['url']; ?>');" alt="<?php echo get_field("image")['alt']; ?>" title="<?php echo get_field("image")['title']; ?>"></div>
               <div class="cooperation__title">  <?php the_field("title"); ?> </div>
               <div class="advantages">
                 <div class="advantages__title">

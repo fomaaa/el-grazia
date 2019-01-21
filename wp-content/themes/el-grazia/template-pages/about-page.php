@@ -60,7 +60,7 @@
                   		foreach($block as $item) :
                   	?>
 	                    <div class="swiper-slide">
-	                      <div class="photo" style="background-image: url('<?php echo $item['url'] ?>');"></div>
+	                      <div class="photo" style="background-image: url('<?php echo $item['url'] ?>');" alt="<?php echo $item['alt'] ?>" title="<?php echo $item['title'] ?>"></div>
 	                    </div>
                   		
                   	<?php endforeach; endif; ?>

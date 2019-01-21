@@ -527,10 +527,70 @@ function getProductCatTree($id, $data = array()){
 	return $data;
 }
 
-function get_h1() {
+function get_h1() 
+{
 	if (get_field('seo_h1')) {
 		the_field('seo_h1');
 	} else {
 		the_title();
 	}
 }
+
+add_action( 'wp_ajax_nopriv_send_form', 'send_form');
+add_action( 'wp_ajax_send_form', 'send_form');
+
+function send_form()
+{
+	if ($_POST['role'] == '1' || $_POST['role'] == '2') {
+		$to = "center@eliagrazia.ru";
+		$message = "
+			Заявка с формы обратной связи <br>
+			Имя - " . $_POST['name'] ." <br>
+			Телефон - " . $_POST['phone'] ." <br>
+			Email - " . $_POST['email'] ." <br>
+			Роль - " . $_POST['roleName'] ." <br>
+			Семинар - " . $_POST['seminar'] ." <br>
+			Как узнали - " . $_POST['about'] ." <br>
+			Комментарий - " . $_POST['comment'] ." <br>
+			Дата - " . date("Y-m-d H:i:s") ." <br>
+		";	
+
+	} elseif ($_POST['role'] == '3') {
+		$to = "zhdanova@eliagrazia.ru";
+		$message = "
+			Заявка с формы обратной связи <br>
+			Имя - " . $_POST['name'] ." <br>
+			Телефон - " . $_POST['phone'] ." <br>
+			Email - " . $_POST['email'] ." <br>
+			Роль - " . $_POST['roleName'] ." <br>
+			Бренд - " . $_POST['brand'] ." <br>
+			Как узнали - " . $_POST['about'] ." <br>
+			Комментарий - " . $_POST['comment'] ." <br>
+			Дата - " . date("Y-m-d H:i:s") ." <br>
+		";
+	} else {
+		$to = "zhdanova@eliagrazia.ru";
+		$message = "
+			Заявка с формы обратной связи <br>
+			Имя - " . $_POST['name'] ." <br>
+			Телефон - " . $_POST['phone'] ." <br>
+			Email - " . $_POST['email'] ." <br>
+			Роль - " . $_POST['roleName'] ." <br>
+			Как узнали - " . $_POST['about'] ." <br>
+			Комментарий - " . $_POST['comment'] ." <br>
+			Дата - " . date("Y-m-d H:i:s") ." <br>
+		";
+	}
+
+	$subject = "Заявка с формы обратной связи";
+
+	$headers .= 'From: <info@eliagrazia.ru>' . "\r\n";
+
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+	$res = wp_mail($to,$subject,$message,$headers);
+
+	exit(json_encode($res));
+}
+

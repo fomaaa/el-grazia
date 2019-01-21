@@ -44,7 +44,7 @@ defined( 'ABSPATH' ) || exit;
                   	?>
 	                    <div class="swiper-slide">
 	                      <div class="photo">
-	                        <img src="<?php echo $item['url'] ?>" alt="">
+	                        <img src="<?php echo $item['url'] ?>" alt="<?php echo $item['alt'] ?>" title="<?php echo $item['title'] ?>">
 	                      </div>
 	                    </div>
                   		
