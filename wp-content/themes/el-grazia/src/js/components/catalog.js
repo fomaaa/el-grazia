@@ -7,7 +7,7 @@ let templateCatalog = (category) => {
     <div class="gridWrapper">
           <div class="grid gridDesktop--3 gridMobile--2"></div>
           <div class="grid__bottom">
-                  <a href="#" id="load_more" data-category="${category}" class="btn btn--primary"><span>Показать еще</span></a>
+                  ${category ? `<a href="#" id="load_more" data-category="${category}" class="btn btn--primary"><span>Показать еще</span></a>` : ''}
                   <a href="/registration/?type=price" class="btn btn--secondary"><span>Узнать стоимость</span></a>
           </div>
     </div>
@@ -51,6 +51,8 @@ $categoryTarget.on('click', function(e) {
 
       $('.section--catalog .section__title').replaceWith(newTitle);
 
+      history.pushState('', '', url_category);
+
       if (body) {
         let $gridContainer = $('<div class="grid gridDesktop--3 gridMobile--2" />');
 
@@ -63,9 +65,19 @@ $categoryTarget.on('click', function(e) {
         let $gridCatalog = $('.section--catalog .grid');
 
         if ($gridCatalog.length) {
-          $gridCatalog.replaceWith($gridContainer);
+          // $gridCatalog.replaceWith($gridContainer);
+          if (nextPage === 1) {
+            $('.section--catalog .gridWrapper').replaceWith(templateCatalog(id_category));
+          } else {
+            $('.section--catalog .gridWrapper').replaceWith(templateCatalog());
+          }
+          $('.section--catalog .grid').replaceWith($gridContainer);
         } else {
-          $('.section--catalog .gridWrapper').replaceWith(templateCatalog(id_category));
+          if (nextPage === 1) {
+            $('.section--catalog .gridWrapper').replaceWith(templateCatalog(id_category));
+          } else {
+            $('.section--catalog .gridWrapper').replaceWith(templateCatalog());
+          }
           $('.section--catalog .grid').replaceWith($gridContainer);
         }
       }
