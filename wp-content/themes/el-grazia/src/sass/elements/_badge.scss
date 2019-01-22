@@ -5,9 +5,10 @@
 	font-weight: 700;
 	font-size: 11px;
 	text-transform: uppercase;
-	display: inline-block;
-	height: 32px;
-	line-height: 33px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 32px;
 	text-align: center;
 	width: 103px;
 }

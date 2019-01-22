@@ -126,6 +126,14 @@
 	visibility: hidden;
 	transition: .3s all;
 
+	@include r($xs-breakpoint) {
+		opacity: 1;
+		visibility: visible;
+		position: relative;
+		top: 0;
+		padding: 10px 0 0;
+	}
+
 	a {
 		width: 218px + 27px;
 		transition: none;

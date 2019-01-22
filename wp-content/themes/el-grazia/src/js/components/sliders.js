@@ -49,6 +49,7 @@ $('.gridSlider').each(function() {
     },
     breakpoints: {
       767: {
+        autoHeight: true,
         slidesPerView: 1
       }
     }

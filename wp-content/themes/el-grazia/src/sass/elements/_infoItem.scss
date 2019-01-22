@@ -24,14 +24,16 @@
 
 	&__value {
 		white-space: nowrap;
+		display: flex;
+		flex-flow: wrap;
+		align-items: center;
+
+		> span {
+			display: block;
+		}
 	}
 
 	[data-badge] {
-
-		@include r($xs-breakpoint) {
-
-		}
-
 
 		> span {
 			display: block;
@@ -48,10 +50,12 @@
 			white-space: normal;
 
 			@include r($xs-breakpoint) {
-				position: absolute;
+				//position: absolute;
+				//display: inline-block;
+				//bottom: -11px;
+				//left: 0;
 				display: inline-block;
-				bottom: -11px;
-				left: 0;
+				max-width: 115px;
 			}
 		}
 	}
