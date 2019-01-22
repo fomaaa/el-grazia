@@ -66,6 +66,7 @@
                   	<?php endforeach; endif; ?>
                   </div>
                 </div>
+                <?php if (count($block) > 1) : ?>
                 <div class="companyGallery__thumbs">
                   <div class="swiper-container js-gallery-thumbs">
                     <div class="swiper-wrapper">
@@ -90,6 +91,7 @@
                     </svg>
                   </div>
                 </div>
+                <?php endif; ?>
               </div>
               <div class="company__body">
                 <article>

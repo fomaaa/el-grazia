@@ -37,13 +37,14 @@
                   	?>
 	                    <div class="swiper-slide">
 	                      <div class="photo">
-	                        <img src="<?php echo $item['url'] ?>" alt="">
+	                        <img src="<?php echo $item['url'] ?>" alt="<?php echo $item['alt'] ?>" title="<?php echo $item['title'] ?>">
 	                      </div>
 	                    </div>
                   		
                   	<?php endforeach; endif; ?>
                   </div>
                 </div>
+                <?php if (count($block) > 1) : ?>
                 <div class="brandGallery__thumbs">
                   <div class="swiper-container js-gallery-thumbs">
                     <div class="swiper-wrapper">
@@ -69,6 +70,7 @@
                     </svg>
                   </div>
                 </div>
+                <?php endif; ?>
               </div>
               <div class="i-content">
 
@@ -82,7 +84,7 @@
                 </article>
                 <div class="brands__bottom">
                   <?php  if(get_field('product')) : ?>
-                  <a href="<?php echo get_term_link(get_field('product')) ?>" class="btn btn--primary">
+                  <a href="<?php $link = get_term_link(intval(get_field('product'))); if (is_string($link)) echo $link ?>" class="btn btn--primary">
                     <span>Смотреть продукцию</span>
                   </a>
                   <?php endif; ?>

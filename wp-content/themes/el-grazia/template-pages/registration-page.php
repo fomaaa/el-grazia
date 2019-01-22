@@ -45,10 +45,10 @@
                 <div class="form__field form__field--select">
                   <select name="role" class="js-select ">
                     <option value="0" selected disabled>Роль пользователя*</option>
-                    <option value="1">Модель</option>
-                    <option value="2">Косметолог</option>
-                    <option value="3">Узнать стоимость</option>
-                    <option value="4">Сотрудничество</option>
+                    <option value="1">Модель на семинар</option>
+                    <option value="2">Косметолог (пройти обучение)</option>
+                    <option value="3">Косметолог (узнать стоимость продукции/ консультация)</option>
+                    <option value="4">Сотрудничество (для организаций)</option>
                   </select>
                   <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>
@@ -85,6 +85,10 @@
                         <?php echo get_the_title($item['item']->ID); ?>
                     <?php endforeach; endif; ?>
                   </select>
+                  <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
+                </div>
+                <div class="form__field"  style="display: none;">
+                  <input type="text" class="input " name="city" placeholder="Город*" />
                   <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>
                 <div class="form__field">

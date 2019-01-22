@@ -40,12 +40,21 @@ $(document).ready(function () {
       if (val == '1' || val == '2') {
         $('[name="seminar"]').parents('.form__field--select').show('350');
         $('[name="brand"]').parents('.form__field--select').hide();
+        $('[name="city"]').parents('.form__field').hide();
       } else if (val == '3') {
         $('[name="brand"]').parents('.form__field--select').show('350');
         $('[name="seminar"]').parents('.form__field--select').hide();
-      } else {
+        $('[name="city"]').parents('.form__field').hide();
+      } 
+      // else if (val == '4') {
+      //   $('[name="city"]').parents('.form__field').show('350');
+      //   $('[name="seminar"]').parents('.form__field--select').hide();
+      //   $('[name="brand"]').parents('.form__field--select').hide();
+      // } 
+      else {
         $('[name="seminar"]').parents('.form__field--select').hide('350');
         $('[name="brand"]').parents('.form__field--select').hide('350');
+        $('[name="city"]').parents('.form__field').hide('350');
       }
 
     })
@@ -62,6 +71,7 @@ $(document).ready(function () {
     var about = $('[name="about"]').val();
     var comment = $('[name="comment"]').val();
     var brand = $('[name="brand"]').val();
+    var city = $('[name="city"]').val();
     var validation = validateForm();
 
     if (validation){
@@ -78,11 +88,12 @@ $(document).ready(function () {
                 seminar: seminar,
                 brand: brand,
                 about: about,
-                comment: comment
+                comment: comment,
+                city: city
             },
             success: function (response) {
               if (response) {
-                location.href = '/thankyou';
+                // location.href = '/thankyou';
               }
 
             }
@@ -104,6 +115,7 @@ function validateForm() {
     var email = $('[name="email"]').val();
     var seminar = $('[name="seminar"]').val();
     var brand = $('[name="brand"]').val();
+    var city = $('[name="city"]').val();
 
     if (!role) {
       $('[name="role"]').parents('.form__field--select').find('.validation').show('fast');
@@ -147,6 +159,14 @@ function validateForm() {
         $('[name="brand"]').parents('.form__field--select').find('.validation').hide('fast');
       }
     } 
+    // else if (role == '4') {
+    //   if (!city) {
+    //     $('[name="city"]').parents('.form__field').find('.validation').show('fast');
+    //     validation = false;
+    //   } else {
+    //      $('[name="city"]').parents('.form__field').find('.validation').hide('fast');
+    //   }
+    // }
 
     return validation;
 }

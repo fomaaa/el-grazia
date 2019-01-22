@@ -8,3 +8,29 @@
 
 2019-01-22T09:43:48+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 85
 
+2019-01-22T13:20:49+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 85
+
+2019-01-22T13:21:06+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 85
+
+2019-01-22T13:22:30+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 85
+
+2019-01-22T13:22:46+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 86
+
+2019-01-22T13:23:45+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 86
+
+2019-01-22T13:26:12+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 87
+
+2019-01-22T13:26:39+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 87
+
+2019-01-22T13:27:27+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 88
+
+2019-01-22T13:27:50+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 88
+
+2019-01-22T13:28:54+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 87
+
+2019-01-22T13:29:28+00:00 CRITICAL Object of class WP_Error could not be converted to string в /home/c/cv85593/public_html/wp-content/themes/el-grazia/template-parts/content-brands.php на строке 88
+
+2019-01-22T20:02:22+00:00 CRITICAL syntax error, unexpected end of file в /home/c/cv85593/public_html/wp-content/themes/el-grazia/functions.php на строке 333
+
+2019-01-22T20:54:57+00:00 CRITICAL syntax error, unexpected '$subject' (T_VARIABLE) в /home/c/cv85593/public_html/wp-content/themes/el-grazia/functions.php на строке 605
+

@@ -111,7 +111,15 @@ if ( ! function_exists( 'el_grazia_setup' ) ) :
 				'capability' => 'edit_posts',
 				'redirect' => false,
 				// 'icon_url' => 'dashicons-phone',
-			));		
+			));				
+			// acf_add_options_page(array(
+			// 	'page_title' => 'Форма регистрации',
+			// 	'menu_title' => 'Форма регистрации',
+			// 	'menu_slug' => 'theme-general-form',
+			// 	'capability' => 'edit_posts',
+			// 	'redirect' => false,
+			// 	// 'icon_url' => 'dashicons-phone',
+			// ));		
 		}	
 
 
@@ -443,7 +451,7 @@ function load_more() {
 			$html .= '<div class="card card--good">';
 				$html .= '<a href="'. get_the_permalink() .'" class="card__link"></a>';
 				$html .= '<div class="card__photo">';
-				$html .= woocommerce_get_product_thumbnail();
+				$html .= woocommerce_get_product_thumbnail('medium');
 				$html .= '</div>';
 				$html .= '<div class="card__body">';
 				$html .= ' <div class="card__title">'. get_the_title() .'</div>';
@@ -580,7 +588,23 @@ function send_form()
 			Комментарий - " . $_POST['comment'] ." <br>
 			Дата - " . date("Y-m-d H:i:s") ." <br>
 		";
+		// $message = "
+		// 	Заявка с формы обратной связи <br>
+		// 	Имя - " . $_POST['name'] ." <br>
+		// 	Телефон - " . $_POST['phone'] ." <br>
+		// 	Город - " . $_POST['city'] ." <br>
+		// 	Email - " . $_POST['email'] ." <br>
+		// 	Роль - " . $_POST['roleName'] ." <br>
+		// 	Как узнали - " . $_POST['about'] ." <br>
+		// 	Комментарий - " . $_POST['comment'] ." <br>
+		// 	Дата - " . date("Y-m-d H:i:s") ." <br>
+		// ";
 	}
+
+	// $role = $_POST['role'] - 1;
+	// $role_map = get_field('roles', 'option');
+	// $to1 = $role_map[$role]['mail'];
+
 
 	$subject = "Заявка с формы обратной связи";
 
@@ -591,6 +615,26 @@ function send_form()
 
 	$res = wp_mail($to,$subject,$message,$headers);
 
-	exit(json_encode($res));
+	$data = array(
+		'cfdb7_status' => 'unread',
+		'menu-581' => $_POST['roleName'], 
+		'fio' => $_POST['name'], 
+		'tel-573' => $_POST['phone'], 
+		'email-868' => $_POST['email'], 
+	);
+
+	global $wpdb;
+	$wpdb->insert( 
+	    'wp_db7_forms', 
+	    array( 
+	        'form_post_id' => '299',
+	        'form_value'   => serialize($data),
+	        'form_date'      => date("Y-m-d H:i:s")
+	    )
+	);
+
+	$record_id = $wpdb->insert_id;
+
+	exit(json_encode($record_id));
 }
 
