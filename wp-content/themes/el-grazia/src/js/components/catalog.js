@@ -38,6 +38,8 @@ $categoryTarget.on('click', function(e) {
   $categoryTarget.removeClass('is-active');
   self.addClass('is-active');
 
+  window.current_sub_page = 1;
+
   $.ajax({
     url: ajax_url,
     method: 'POST',
