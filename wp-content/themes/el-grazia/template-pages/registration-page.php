@@ -96,7 +96,7 @@
                   <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>
                 <div class="form__field">
-                  <input type="text" class="input js-mask-phone" name="phone"  placeholder="Телефон*" />
+                  <input type="text" class="input" name="phone"  placeholder="Телефон*" />
                   <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>
                 <div class="form__field">

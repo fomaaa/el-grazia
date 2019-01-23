@@ -112,14 +112,14 @@ if ( ! function_exists( 'el_grazia_setup' ) ) :
 				'redirect' => false,
 				// 'icon_url' => 'dashicons-phone',
 			));				
-			// acf_add_options_page(array(
-			// 	'page_title' => 'Форма регистрации',
-			// 	'menu_title' => 'Форма регистрации',
-			// 	'menu_slug' => 'theme-general-form',
-			// 	'capability' => 'edit_posts',
-			// 	'redirect' => false,
-			// 	// 'icon_url' => 'dashicons-phone',
-			// ));		
+			acf_add_options_page(array(
+				'page_title' => 'Форма регистрации',
+				'menu_title' => 'Форма регистрации',
+				'menu_slug' => 'theme-general-form',
+				'capability' => 'edit_posts',
+				'redirect' => false,
+				// 'icon_url' => 'dashicons-phone',
+			));		
 		}	
 
 
@@ -423,6 +423,8 @@ function load_more() {
 	$category = $_POST['term_id'];
 
     $args = array(
+    	    'orderby' => 'title',
+    'order'   => 'ASC',
 	    'post_type'             => 'product',
 	    'posts_per_page'  		=> 6,
 	    'offset' 				=> $current * 6,
@@ -487,6 +489,8 @@ function load_category() {
 	);
 
     $args = array(
+    	    'orderby' => 'title',
+    'order'   => 'ASC',
 	    'post_type'             => 'product',
 	    'posts_per_page'  		=> 6,
 	    'tax_query' 			=> array(
@@ -550,7 +554,7 @@ add_action( 'wp_ajax_send_form', 'send_form');
 function send_form()
 {
 	if ($_POST['role'] == '1' || $_POST['role'] == '2') {
-		$to = "center@eliagrazia.ru";
+		// $to = "center@eliagrazia.ru";
 		$message = "
 			Заявка с формы обратной связи <br>
 			Имя - " . $_POST['name'] ." <br>
@@ -564,7 +568,7 @@ function send_form()
 		";	
 
 	} elseif ($_POST['role'] == '3') {
-		$to = "zhdanova@eliagrazia.ru";
+		// $to = "zhdanova@eliagrazia.ru";
 		$message = "
 			Заявка с формы обратной связи <br>
 			Имя - " . $_POST['name'] ." <br>
@@ -577,28 +581,28 @@ function send_form()
 			Дата - " . date("Y-m-d H:i:s") ." <br>
 		";
 	} else {
-		$to = "zhdanova@eliagrazia.ru";
-		$message = "
-			Заявка с формы обратной связи <br>
-			Имя - " . $_POST['name'] ." <br>
-			Телефон - " . $_POST['phone'] ." <br>
-			Email - " . $_POST['email'] ." <br>
-			Роль - " . $_POST['roleName'] ." <br>
-			Как узнали - " . $_POST['about'] ." <br>
-			Комментарий - " . $_POST['comment'] ." <br>
-			Дата - " . date("Y-m-d H:i:s") ." <br>
-		";
+		// $to = "zhdanova@eliagrazia.ru";
 		// $message = "
 		// 	Заявка с формы обратной связи <br>
 		// 	Имя - " . $_POST['name'] ." <br>
 		// 	Телефон - " . $_POST['phone'] ." <br>
-		// 	Город - " . $_POST['city'] ." <br>
 		// 	Email - " . $_POST['email'] ." <br>
 		// 	Роль - " . $_POST['roleName'] ." <br>
 		// 	Как узнали - " . $_POST['about'] ." <br>
 		// 	Комментарий - " . $_POST['comment'] ." <br>
 		// 	Дата - " . date("Y-m-d H:i:s") ." <br>
 		// ";
+		$message = "
+			Заявка с формы обратной связи <br>
+			Имя - " . $_POST['name'] ." <br>
+			Телефон - " . $_POST['phone'] ." <br>
+			Город - " . $_POST['city'] ." <br>
+			Email - " . $_POST['email'] ." <br>
+			Роль - " . $_POST['roleName'] ." <br>
+			Как узнали - " . $_POST['about'] ." <br>
+			Комментарий - " . $_POST['comment'] ." <br>
+			Дата - " . date("Y-m-d H:i:s") ." <br>
+		";
 	}
 
 	// $role = $_POST['role'] - 1;
@@ -629,12 +633,12 @@ function send_form()
 	    array( 
 	        'form_post_id' => '299',
 	        'form_value'   => serialize($data),
-	        'form_date'      => date("Y-m-d H:i:s")
+	        'form_date'      => date("Y-m-d H:i:s",  strtotime('3 hours'))
 	    )
 	);
 
 	$record_id = $wpdb->insert_id;
 
-	exit(json_encode($record_id));
+	exit(json_encode($res));
 }
 
