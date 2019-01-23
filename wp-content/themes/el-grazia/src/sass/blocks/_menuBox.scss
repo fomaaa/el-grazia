@@ -33,6 +33,10 @@
 			opacity: 1;
 			visibility: visible;
 		}
+
+		@include r($xs-breakpoint) {
+			display: block;
+		}
 	}
 }
 
@@ -53,6 +57,7 @@
 	@include r($xs-breakpoint) {
 		overflow-x: hidden;
 		overflow-y: auto;
+		display: none;
 	}
 
 	> div {
