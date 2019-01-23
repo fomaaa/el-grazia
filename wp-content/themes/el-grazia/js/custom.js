@@ -21,6 +21,8 @@ $(document).ready(function () {
       pageObj.current_sub_page = 1;
     }
 
+    pageObj.categoryId = category;
+
     var data = {
       'action': 'load_more',
       'term_id': category,
