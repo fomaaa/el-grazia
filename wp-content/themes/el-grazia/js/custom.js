@@ -17,7 +17,7 @@ $(document).ready(function () {
     e.preventDefault();
     var category = $(this).data('category');
 
-    if (pageObj.categoryId !== null || pageObj.categoryId !== category) {
+    if (pageObj.categoryId !== null && pageObj.categoryId !== category) {
       pageObj.current_sub_page = 1;
     }
 
