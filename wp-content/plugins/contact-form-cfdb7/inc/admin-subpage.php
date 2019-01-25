@@ -144,7 +144,7 @@ class CFDB7_List_Table extends WP_List_Table
                 
                 $this->column_titles[] = $key_val;
 
-                if ( sizeof($columns) > 4) break;
+                // if ( sizeof($columns) > 4) break;
             }
             $columns['form-date'] = 'Date';
         }

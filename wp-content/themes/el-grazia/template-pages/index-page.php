@@ -90,7 +90,7 @@
                 <p> <?php the_field("adv_text"); ?> </p>
               </article>
               <a href="<?php echo get_page_link('27') ?>" class="btn btn--primary btn--arrow">
-                <span> Подробнее о нас </span>
+                <span> Подробнее о нас </span>  
               </a>
             </div>
           </div>
@@ -128,21 +128,14 @@
               <div class="brands">
                 <div class="section__title">Бренды</div>
                 <ul class="brandsList">
-				         <?php
-        				    $posts = query_posts(array(
-        				      'post_type' => 'brands',
-        				      'posts_per_page'  => 999,
-        				      'orderby' => 'date_add',
-        				      'order' => 'ASC'
-          				    )
-          				  );
-
-        				  if ( have_posts() ) : while ( have_posts() ) : the_post();?>
-                    <li class="brandsList__item">
-                      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  <?php $block = get_field("brands", 25); ?>
+                  <?php if ($block):
+                    foreach($block as $item) :
+                  ?>
+                   <li class="brandsList__item">
+                      <a href="<?php the_permalink($item['item']->ID); ?>"><?php echo get_the_title($item['item']->ID); ?></a>
                     </li>
-        				  <?php endwhile; endif; ?>
-        				  <?php wp_reset_query(); ?>
+                  <?php endforeach; endif; ?>
                 </ul>
               </div>
             </div>
