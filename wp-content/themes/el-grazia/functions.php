@@ -554,7 +554,6 @@ add_action( 'wp_ajax_send_form', 'send_form');
 function send_form()
 {
 	if ($_POST['role'] == '1' || $_POST['role'] == '2') {
-		// $to = "center@eliagrazia.ru";
 		$message = "
 			Заявка с формы обратной связи <br>
 			Имя - " . $_POST['name'] ." <br>
@@ -568,7 +567,6 @@ function send_form()
 		";	
 
 	} elseif ($_POST['role'] == '3') {
-		// $to = "zhdanova@eliagrazia.ru";
 		$message = "
 			Заявка с формы обратной связи <br>
 			Имя - " . $_POST['name'] ." <br>
@@ -581,17 +579,7 @@ function send_form()
 			Дата - " . date("Y-m-d H:i:s") ." <br>
 		";
 	} else {
-		// $to = "zhdanova@eliagrazia.ru";
-		// $message = "
-		// 	Заявка с формы обратной связи <br>
-		// 	Имя - " . $_POST['name'] ." <br>
-		// 	Телефон - " . $_POST['phone'] ." <br>
-		// 	Email - " . $_POST['email'] ." <br>
-		// 	Роль - " . $_POST['roleName'] ." <br>
-		// 	Как узнали - " . $_POST['about'] ." <br>
-		// 	Комментарий - " . $_POST['comment'] ." <br>
-		// 	Дата - " . date("Y-m-d H:i:s") ." <br>
-		// ";
+
 		$message = "
 			Заявка с формы обратной связи <br>
 			Имя - " . $_POST['name'] ." <br>
@@ -605,9 +593,9 @@ function send_form()
 		";
 	}
 
-	// $role = $_POST['role'] - 1;
-	// $role_map = get_field('roles', 'option');
-	// $to1 = $role_map[$role]['mail'];
+	$role = $_POST['role'] - 1;
+	$role_map = get_field('roles', 'option');
+	$to = $role_map[$role]['mail'];
 
 
 	$subject = "Заявка с формы обратной связи";
@@ -625,6 +613,11 @@ function send_form()
 		'fio' => $_POST['name'], 
 		'tel-573' => $_POST['phone'], 
 		'email-868' => $_POST['email'], 
+		'Comment' => $_POST['comment'], 
+		'About' => $_POST['about'], 
+		'seminar' => $_POST['seminar'],
+		'brand' => $_POST['brand'],
+		'city' => $_POST['city']
 	);
 
 	global $wpdb;

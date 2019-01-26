@@ -22,33 +22,19 @@
             <div class="section__title">
               <h1><?php the_title(); ?></h1>
             </div>
-<!--             <div class="registration">
-              <?php echo do_shortcode('[contact-form-7 id="299" title="Форма регистрации" html_class="form form--registration"]') ?>
-              <?php 
-                if (!empty($_GET)) {
-                  if (!empty($_GET['id'])) {
-                    $title = get_the_title($_GET['id']);
-
-                  } else if (!empty($_GET['type'])) {
-                    if ($_GET['type'] == 'cooperation') {
-                      $title = 'Сотрудничество';
-                    }
-                  }
-                }
-              ?>
-              <?php if ($title) : ?>
-                <script>var form_title = '<?php echo $title; ?>';</script>
-              <?php endif; ?>
-            </div> -->
             <div class="registration">
               <form action="/registration" id="reg_form" method="POST" class="form form--registration">
                 <div class="form__field form__field--select">
                   <select name="role" class="js-select ">
                     <option value="0" selected disabled>Роль пользователя*</option>
-                    <option value="1">Модель на семинар</option>
-                    <option value="2">Косметолог (пройти обучение)</option>
-                    <option value="3">Косметолог (узнать стоимость продукции/ консультация)</option>
-                    <option value="4">Сотрудничество (для организаций)</option>
+                    <?php 
+                      $block = get_field("roles" , 'option');
+                      if ($block):
+                        foreach($block as $key => $item) :
+                    ?>
+                      <option value="<?php echo $key+1; ?>"><?php echo $item['name'] ?></option>
+                      <?php echo $item[''] ?>
+                    <?php endforeach; endif; ?>         
                   </select>
                   <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>

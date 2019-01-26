@@ -102,7 +102,7 @@
                 <div class="blockInfo__left"> Дополнительная информация: </div>
                 <div class="blockInfo__right">
                   <?php the_field("add_inf"); ?>
-                  <a href="<?php echo get_page_link('296') ?>?type=seminar&id=<?php echo get_the_ID() ?>" class="btn btn--primary"><span>Регистрация</span></a>
+                  <a href="<?php echo get_page_link('296') ?>?type=seminar&id=<?php echo get_the_ID() ?>" class="btn btn--primary"><span>Зарегистрироваться</span></a>
                 </div>
               </div>
               <div class="blockInfo">
