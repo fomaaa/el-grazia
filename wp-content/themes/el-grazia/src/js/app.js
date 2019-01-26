@@ -4,6 +4,7 @@ import vhCheck from 'vh-check';
 import $ from 'jquery';
 import 'selectric';
 import '@fancyapps/fancybox';
+import 'select2';
 
 import {ACTIVE, BODY} from './_const';
 
@@ -35,6 +36,16 @@ window.$ = $;
   $(function() {
 
     $('body').addClass('page-ready');
+
+    $('.js-select2').each(function() {
+      let self = $(this);
+      let placeholder = self.data('select-placeholder');
+
+      self.select2({
+        placeholder:placeholder,
+      });
+
+    });
 
     svg4everybody();
 

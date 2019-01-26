@@ -77,6 +77,7 @@
     "@fancyapps/fancybox": "^3.2.5",
     "gsap": "^1.20.3",
     "gulp-imagemin": "^5.0.3",
+    "select2": "^4.0.6-rc.1",
     "selectric": "^1.13.0",
     "slick-carousel": "^1.8.1",
     "stylelint": "^8.4.0",
