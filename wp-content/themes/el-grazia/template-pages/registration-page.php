@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* Template Name: Регистрация */
-  get_header(); 
+  get_header();
 ?>
 
       <div class="pageWrapper">
@@ -25,27 +25,26 @@
             <div class="registration">
               <form action="/registration" id="reg_form" method="POST" class="form form--registration">
                 <div class="form__field form__field--select">
-                  <select name="role" class="js-select ">
-                    <option value="0" selected disabled>Роль пользователя*</option>
-                    <?php 
+                  <select name="role" class="js-select">
+                  	<option value="0" selected disabled>Роль пользователя*</option>
+                    <?php
                       $block = get_field("roles" , 'option');
                       if ($block):
                         foreach($block as $key => $item) :
                     ?>
                       <option value="<?php echo $key+1; ?>"><?php echo $item['name'] ?></option>
                       <?php echo $item[''] ?>
-                    <?php endforeach; endif; ?>         
+                    <?php endforeach; endif; ?>
                   </select>
                   <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>
                 <div class="form__field form__field--select">
-                  <select name="seminar" class="js-select " >
-                    <option value="0" selected disabled>Выберите семинар*</option>
-                    <?php 
+                  <select name="seminar"  data-select-placeholder="Выберите семинар*"  multiple="multiple" class="js-select2" >
+                    <?php
                       $block = get_field("seminars", 266);
                         if ($block):
                           foreach($block as $key => $item) :
-                            if (!empty($item['seminar'][0]['sem'])) : 
+                            if (!empty($item['seminar'][0]['sem'])) :
                               $seminars = $item['seminar'];
                                 foreach($seminars as $seminar) :
                                    if (!empty($seminar['sem'])):
@@ -61,7 +60,7 @@
                 <div class="form__field form__field--select">
                   <select name="brand" class="js-select ">
                     <option value="0" selected disabled>Выберите бренд*</option>
-                    <?php 
+                    <?php
                       $block = get_field("brands", 25);
 
                       if ($block):

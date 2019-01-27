@@ -1,2 +1,4 @@
 wp-config.php
 .idea
+wp-content/wflogs
+wp-content/uploads
