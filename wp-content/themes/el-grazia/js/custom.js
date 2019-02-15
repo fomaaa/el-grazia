@@ -68,7 +68,7 @@ $(document).ready(function () {
     var name = $('[name="name"]').val();
     var phone = $('[name="phone"]').val();
     var email = $('[name="email"]').val();
-    var seminar = $('[name="seminar"]').val();
+    var seminar = ($('[name="seminar"]').val()).join(', ');
     var about = $('[name="about"]').val();
     var comment = $('[name="comment"]').val();
     var brand = $('[name="brand"]').val();
@@ -114,7 +114,7 @@ function validateForm() {
   var name = $('[name="name"]').val();
   var phone = $('[name="phone"]').val();
   var email = $('[name="email"]').val();
-  var seminar = $('[name="seminar"]').val();
+  var seminar = ($('[name="seminar"]').val()).join(', ');
   var brand = $('[name="brand"]').val();
   var city = $('[name="city"]').val();
 

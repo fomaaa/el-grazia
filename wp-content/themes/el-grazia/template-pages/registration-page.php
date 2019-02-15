@@ -25,7 +25,8 @@
             <div class="registration">
               <form action="/registration" id="reg_form" method="POST" class="form form--registration">
                 <div class="form__field form__field--select">
-                  <select name="role" class="js-select2" multiple="multiple" data-select-placeholder="Роль пользователя*">
+                  <select name="role" class="js-select">
+                  	<option value="0" selected disabled>Роль пользователя*</option>
                     <?php
                       $block = get_field("roles" , 'option');
                       if ($block):
@@ -38,8 +39,7 @@
                   <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>
                 <div class="form__field form__field--select">
-                  <select name="seminar" class="js-select " >
-                    <option value="0" selected disabled>Выберите семинар*</option>
+                  <select name="seminar"  data-select-placeholder="Выберите семинар*"  multiple="multiple" class="js-select2" >
                     <?php
                       $block = get_field("seminars", 266);
                         if ($block):
