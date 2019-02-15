@@ -89,7 +89,8 @@
                   <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>
                 <div class="form__field">
-                  <input type="text" class="input " name="about" placeholder="Как узнали о нас?" />
+                  <input type="text" class="input " name="about" placeholder="Как узнали о нас?*" />
+                  <span role="alert" class="wpcf7-not-valid-tip validation" style="display: none;">Поле обязательно для заполнения.</span>
                 </div>
                 <div class="form__field form__field--textarea">
                   <textarea name="comment" class="textarea" name="comment" placeholder="Комментарий"></textarea>

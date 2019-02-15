@@ -387,9 +387,9 @@ function set_admin_menu() {
 	remove_submenu_page( 'edit.php', 'edit.php?post_type=shop_order' );
 	remove_menu_page( 'edit.php?post_type=acf-field-group');
 	remove_menu_page( 'edit-comments.php' ); 
-	remove_menu_page( 'tools.php' ); 
-	remove_menu_page( 'themes.php' ); 
-	remove_menu_page( 'plugins.php' ); 
+	// remove_menu_page( 'tools.php' ); 
+	// remove_menu_page( 'themes.php' ); 
+	// remove_menu_page( 'plugins.php' ); 
 	remove_menu_page('edit.php?post_type=shop_order'); 
 }
 
@@ -635,3 +635,7 @@ function send_form()
 	exit(json_encode($res));
 }
 
+
+remove_action( 'load-update-core.php', 'wp_update_plugins' );
+add_filter( 'pre_site_transient_update_plugins', create_function( '$a', "return null;" ) );
+wp_clear_scheduled_hook( 'wp_update_plugins' );

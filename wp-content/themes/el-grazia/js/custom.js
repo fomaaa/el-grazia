@@ -117,6 +117,7 @@ function validateForm() {
   var seminar = ($('[name="seminar"]').val()).join(', ');
   var brand = $('[name="brand"]').val();
   var city = $('[name="city"]').val();
+  var about = $('[name="about"]').val();
 
   if (!role) {
     $('[name="role"]').parents('.form__field--select').find('.validation').show('fast');
@@ -143,6 +144,13 @@ function validateForm() {
     validation = false;
   } else {
     $('[name="email"]').parents('.form__field').find('.validation').hide('fast');
+  }
+
+  if (about.length == 0) {
+    $('[name="about"]').parents('.form__field').find('.validation').show('fast');
+    validation = false;
+  } else {
+    $('[name="about"]').parents('.form__field').find('.validation').hide('fast');
   }
 
   if (role == '1' || role == '2') {
