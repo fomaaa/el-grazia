@@ -1,0 +1,132 @@
+.section--carousel {
+	padding-top: 68px;
+
+	@include r($md-breakpoint) {
+		padding-top: 34px;
+	}
+
+	@include r($xs-breakpoint) {
+		padding-top: 39px;
+	}
+
+	&.is-animated {
+
+		.swiper-slide {
+			opacity: 1;
+		}
+	}
+
+	.section__head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 54px;
+
+		@include r($md-breakpoint) {
+			margin-bottom: 17px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-bottom: 25px;
+		}
+	}
+
+	.swiper-pagination {
+		display: none;
+
+		@include r($xs-breakpoint) {
+			display: block;
+		}
+	}
+
+	.swiper-slide {
+		opacity: 0;
+		transition: .5s all;
+		@include top-menu-items-transition($items: 6)
+	}
+
+	.card--news {
+		.card__photo {
+			max-height: 171px;
+		}
+
+		.card__body {
+			height: calc(100% - 171px);
+
+			@include r($md-breakpoint) {
+				height: calc(100% - 171px);
+			}
+
+			@include r($xs-breakpoint) {
+				height: calc(100% - 158px);
+			}
+		}
+	}
+}
+
+.carouselNav {
+
+	@include rmin($xs-breakpoint) {
+		display: flex;
+		margin: 0 -7px;
+
+		.swiper-button {
+			position: relative;
+			margin: 0 7px;
+			right: 0;
+			left: 0;
+			top: 0;
+			bottom: 0;
+		}
+	}
+
+	@include r($xs-breakpoint) {
+
+		.swiper-button-next {
+			right: 0;
+		}
+
+		.swiper-button-prev {
+			left: 0;
+		}
+	}
+}
+
+
+.carouselBody {
+	margin: -20px -12px;
+	padding: 20px 12px 60px;
+
+	@include r($md-breakpoint) {
+		padding-bottom: 51px;
+	}
+
+	@include r($xs-breakpoint) {
+		padding-bottom: 39px;
+		margin-bottom: 0;
+	}
+
+	.swiper-slide {
+		height: auto;
+
+		.card {
+			height: 100%;
+		}
+	}
+}
+
+.carouselBottom {
+	margin-top: 21px;
+
+	@include r($md-breakpoint) {
+		margin-top: 0;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 23px;
+
+		.btn {
+			width: 100%;
+		}
+	}
+}

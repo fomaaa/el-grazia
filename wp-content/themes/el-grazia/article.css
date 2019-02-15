@@ -1,0 +1,5 @@
+.listBox {
+    border: 15px solid #e6f8fd;
+    padding: 55px calc(77px - 15px);
+    color: #7f7f7f;
+}

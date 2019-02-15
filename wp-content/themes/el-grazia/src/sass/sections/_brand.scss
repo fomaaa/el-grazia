@@ -1,0 +1,179 @@
+.section--brand {
+	padding: 22px 0 0;
+
+	@include r($md-breakpoint) {
+		padding: 8px 0 0;
+	}
+
+	@include r($xs-breakpoint) {
+		padding: 3px 0 0;
+	}
+
+	.i-content {
+		margin-top: 48px;
+
+		@include r($md-breakpoint) {
+			margin-top: 42px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 30px;
+		}
+
+		.listBox {
+			margin-top: 52px;
+			margin-left: -76px;
+			margin-right: -76px;
+			margin-bottom: 55px;
+
+			@include r($md-breakpoint) {
+				margin-top: 32px;
+				margin-left: -40px;
+				margin-right: -40px;
+				margin-bottom: 33px;
+			}
+
+			@include r($xs-breakpoint) {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.brand__head {
+	display: flex;
+	justify-content: space-between;
+
+	.brand__title {
+		width: 50%;
+	}
+
+	.brand__logo {
+
+		@include r($md-breakpoint) {
+			max-height: 26px;
+
+			img {
+				height: 100%;
+			}
+		}
+
+		@include r($xs-breakpoint) {
+			width: 50%;
+			text-align: right;
+			max-height: 21px;
+		}
+	}
+}
+
+.brandGallery {
+	max-width: 840px;
+	margin: 47px auto 0;
+
+	@include r($md-breakpoint) {
+		max-width: 485px;
+		margin-top: 30px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 33px;
+	}
+}
+
+.brandGallery__main {
+
+	.swiper-slide {
+		overflow: hidden;
+	}
+}
+
+.brandGallery__thumbs {
+	width: 312px;
+	margin: 24px auto 0;
+	overflow: visible;
+	position: relative;
+
+	@include r($md-breakpoint) {
+		width: 277px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 18px;
+	}
+
+	.swiper-button-prev {
+		left: -47px;
+	}
+
+	.swiper-button-next {
+		right: -47px;
+	}
+
+	.swiper-slide {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+
+		@include r($md-breakpoint) {
+			width: 53px;
+			height: 53px;
+		}
+
+		&-active {
+			border: 1px dashed $border-color;
+		}
+
+
+		.photo {
+			@include vcenter();
+			@include cover();
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+
+			@include r($md-breakpoint) {
+				height: 42px;
+				width: 42px;
+			}
+		}
+	}
+}
+
+.brands__bottom {
+	margin-top: 54px;
+	margin-left: -8px;
+	margin-right: -8px;
+
+	@include r($md-breakpoint) {
+		margin-top: 40px;
+		margin-left: -6px;
+		margin-right: -6px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-top: 88px;
+		margin-left: 0;
+		margin-right: 0;
+
+		.btn {
+			width: 100%;
+		}
+	}
+
+	> * {
+		margin: 0 8px;
+
+		@include r($md-breakpoint) {
+			margin: 0 6px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin: 0;
+
+			&:not(:first-child) {
+				margin-top: 16px;
+			}
+		}
+	}
+}
