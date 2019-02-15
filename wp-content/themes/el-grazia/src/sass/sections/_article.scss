@@ -1,0 +1,63 @@
+.section--article {
+	padding: 14px 0 0;
+
+	@include r($md-breakpoint) {
+		padding: 8px 0 0;
+	}
+
+	@include r($xs-breakpoint) {
+		padding: 5px 0 0;
+	}
+
+
+	article {
+
+		p {
+			max-width: 636px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.tagsList {
+		max-width: 636px;
+		margin-top: 40px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include r($md-breakpoint) {
+			margin-top: 30px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 28px;
+		}
+	}
+}
+
+.tagsList {
+	display: flex;
+	flex-flow: wrap;
+	margin-left: -5px;
+	margin-right: -5px;
+
+	&__item {
+		padding: 5px;
+	}
+}
+
+.tag {
+	color: $primary-color;
+	border: 1px solid $border-color;
+	border-radius: 100px;
+	padding: 10px 18px;
+	display: block;
+	font-size: 14px;
+	font-weight: 300;
+
+	&:hover {
+		border-color: $primary-color;
+		background-color: $primary-color;
+		color: #fff;
+	}
+}

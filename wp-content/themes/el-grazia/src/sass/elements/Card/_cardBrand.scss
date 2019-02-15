@@ -1,0 +1,89 @@
+.card--brand {
+	background-color: #fff;
+	box-shadow: $box-shadow;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	color: $primary-color;
+	line-height: 20px;
+	padding: 46px 20px 14px;
+	height: 100%;
+
+	@include r($md-breakpoint) {
+		padding: 20px 8px 15px;
+	}
+
+	@include r($xs-breakpoint) {
+		font-size: 14px;
+		line-height: 1.3;
+	}
+
+	&:hover {
+
+		&:before {
+			opacity: .10;
+			visibility: visible;
+		}
+
+		.card__photo {
+			filter:grayscale(0);
+			opacity: 1;
+		}
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -12px;
+		left: -12px;
+		right: -12px;
+		bottom: -12px;
+		background-color: #0c9cee;
+		z-index: -1;
+		opacity: 0;
+		visibility: hidden;
+		transition: $transition;
+
+		@include r($md-breakpoint) {
+			content: none;
+		}
+	}
+
+	.card__photo {
+		min-height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		filter: grayscale(1);
+		opacity: .7;
+		transition: .3s all;
+
+		@include r($md-breakpoint) {
+			min-height: 57px;
+
+			img {
+				max-width: 126px;
+				max-height: 57px;
+			}
+		}
+
+		@include r($xs-breakpoint) {
+
+			img {
+				max-height: 53px;
+				max-width: 102px;
+			}
+		}
+	}
+
+	.card__body {
+		border-top: 1px solid $border-color;
+		padding-top: 15px;
+		margin-top: 41px;
+
+		@include r($md-breakpoint) {
+			margin-top: 17px;
+		}
+	}
+
+}

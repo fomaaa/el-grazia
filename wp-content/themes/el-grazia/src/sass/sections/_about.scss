@@ -1,0 +1,257 @@
+.section--about {
+	padding-top: 68px;
+
+	@include r($md-breakpoint) {
+		padding-top: 49px;
+	}
+
+	@include r($xs-breakpoint) {
+		padding-top: 27px;
+	}
+
+	&.is-animated {
+
+		.advantagesList .advantages__item:not(:nth-child(-n+2)) {
+			transform: translateY(0);
+		}
+
+		.advantagesList .advantages__item:not(:nth-child(-n+3)) {
+			transform: translateY(0);
+		}
+	}
+
+	.section__inner {
+		padding-top: 66px;
+		padding-bottom: 70px;
+		display: flex;
+		justify-content: space-between;
+
+		@include r($md-breakpoint) {
+			padding-top: 28px;
+			padding-bottom: 28px;
+		}
+
+		@include r($xs-breakpoint) {
+			padding-top: 0;
+		    flex-flow: column;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			background-color: $primary-color-darken;
+			top: 0;
+			right: percentage(822/1400);
+			bottom: 0;
+			left: -1999px;
+			opacity: .1;
+
+			@include r($md-breakpoint) {
+				right: percentage(800/1400);
+			}
+
+			@include r($xs-breakpoint) {
+			    content: none;
+			}
+		}
+	}
+
+	.section__left,
+	.section__right {
+		position: relative;
+		z-index: 1;
+	}
+
+	.section__left {
+		width: percentage(772/1400);
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+		}
+	}
+
+	.section__right {
+		width: percentage(520/1400);
+		padding-top: 61px;
+		padding-right: 40px;
+
+		@include r($md-breakpoint) {
+			padding-top: 10px;
+			width: percentage(550/1400);
+			padding-right: 10px;
+		}
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+			order: -1;
+		}
+
+		p {
+			font-weight: 300;
+		}
+
+		> .btn {
+			margin-top: 44px;
+
+			@include r($md-breakpoint) {
+				margin-top: 23px;
+			}
+
+			@include r($xs-breakpoint) {
+				width: 100%;
+			}
+		}
+	}
+
+	.list-container,
+	.advantagesList {
+
+		@include r($xs-breakpoint) {
+			display: none !important;
+		}
+	}
+
+	.advantagesSlider {
+		display: none;
+
+		@include r($xs-breakpoint) {
+			display: block;
+			overflow: visible;
+			margin-top: 42px;
+		}
+
+		.swiper-slide {
+			height: auto;
+
+			.advantages__item {
+				box-shadow: $box-shadow;
+				height: 100%;
+			}
+		}
+	}
+
+	.advantagesList .advantages__item:not(:nth-child(-n+2)) {
+		position: relative;
+		transform: translateY(15px);
+		transition: .5s all;
+	}
+
+	.advantagesList .advantages__item:not(:nth-child(-n+3)) {
+		position: relative;
+		transform: translateY(30px);
+		transition: .5s all;
+	}
+}
+
+
+.section--about.section--secondary {
+	padding-top: 108px;
+	position: relative;
+
+	@include r($md-breakpoint) {
+		padding-top: 48px;
+	}
+
+	@include r($xs-breakpoint) {
+		padding-top: 35px;
+	}
+
+	.section__inner {
+		padding-bottom: 0;
+
+		&:before {
+			content: '';
+			position: absolute;
+			background-color: $primary-color-darken;
+			top: 0;
+			left: percentage(546/1400);
+			bottom: 43px;
+			right: -1999px;
+			opacity: .1;
+
+			@include r($md-breakpoint) {
+				top: 66px;
+				bottom: 45px;
+				left: percentage(574/1400);
+			}
+
+			@include r($xs-breakpoint) {
+			    content: none;
+			}
+		}
+	}
+
+	.section__left {
+		width: percentage(384/1200);
+
+		@include r($md-breakpoint) {
+			width: percentage(270/720);
+		}
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+		}
+
+		p {
+			font-weight: 300;
+		}
+
+		> .btn {
+			margin-top: 44px;
+
+			@include r($md-breakpoint) {
+				margin-top: 25px;
+				padding: 15px 13px 17px;
+			}
+		}
+	}
+
+	.section__right {
+		padding-top: 0;
+		margin-top: -107px;
+		padding-right: 0;
+		width: percentage(657/1200);
+
+		@include r($md-breakpoint) {
+			width: percentage(403/720);
+			margin-top: -12px;
+		}
+
+		@include r($xs-breakpoint) {
+			order: 0;
+			width: 100%;
+		}
+	}
+
+	.list-container {
+		display: flex;
+		align-items: center;
+		flex-flow: row-reverse;
+		margin: 0 -12px;
+
+		@include r($md-breakpoint) {
+			margin: 0;
+		}
+
+		> .list-column {
+			width: 50%;
+			padding: 0 12px;
+
+			@include r($md-breakpoint) {
+				padding: 0;
+			}
+
+			.advantages__item {
+				width: 100%;
+
+				&:not(:first-child) {
+					margin-top: 28px;
+
+					@include r($md-breakpoint) {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,105 @@
+.section--event {
+	padding: 22px 0 0;
+
+	@include r($md-breakpoint) {
+		padding: 8px 0 0;
+	}
+
+	@include r($xs-breakpoint) {
+		padding: 3px 0 0;
+	}
+
+	.js-gallery {
+		margin-top: 40px;
+
+		@include r($md-breakpoint) {
+			margin-top: 33px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 25px;
+		}
+
+		.companyGallery__main .photo {
+			height: 440px;
+
+			@include r($md-breakpoint) {
+				height: 290px;
+			}
+
+			@include r($xs-breakpoint) {
+				height: 48.5vw;
+			}
+		}
+
+		.companyGallery__thumbs {
+			margin-top: 32px;
+
+			@include r($md-breakpoint) {
+				margin-top: 20px;
+			}
+		}
+	}
+
+	.listBox {
+		margin-top: 48px;
+		margin-bottom: 55px;
+
+		@include r($md-breakpoint) {
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-bottom: 24px;
+		}
+	}
+
+	.blockRegistration {
+		margin-top: 53px;
+
+		@include r($md-breakpoint) {
+			margin-top: 41px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 35px;
+		}
+	}
+}
+
+
+.blockRegistration {
+	background-color: #fbfbfb;
+	padding: 28px 78px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@include r($md-breakpoint) {
+		padding: 38px 39px;
+	}
+
+	@include r($xs-breakpoint) {
+		padding: 22px 15px;
+		display: block;
+	}
+
+	&__left {
+		color: #7f7f7f;
+		font-size: 20px;
+		font-weight: 300;
+		width: percentage(612/1044);
+
+		@include r($md-breakpoint) {
+			font-size: 18px;
+			line-height: 24px;
+		}
+
+		@include r($xs-breakpoint) {
+			width: 100%;
+			text-align: center;
+			margin-bottom: 21px;
+		}
+	}
+}

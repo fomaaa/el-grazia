@@ -1,0 +1,71 @@
+.blockInfo {
+	display: flex;
+	justify-content: space-between;
+	max-width: 946px;
+	line-height: 25px;
+
+	@include r($md-breakpoint) {
+		display: block;
+		margin-left: 40px;
+	}
+
+	@include r($xs-breakpoint) {
+		margin-left: 0;
+	}
+
+	&:not(:first-child) {
+		margin-top: 55px;
+
+		@include r($md-breakpoint) {
+			margin-top: 36px;
+		}
+	}
+
+	&__left {
+		width: percentage(145/946);
+		color: $black;
+		font-weight: 500;
+
+		@include r($md-breakpoint) {
+			width: 100%;
+		}
+	}
+
+	&__right {
+		width: percentage(665/946);
+
+		@include r($md-breakpoint) {
+			width: 100%;
+			margin-top: 20px;
+			font-size: 14px;
+			line-height: 22px;
+		}
+
+		@include r($xs-breakpoint) {
+			margin-top: 16px;
+		}
+
+
+		> ul:not(:first-child) {
+			margin-top: 26px;
+
+			@include r($md-breakpoint) {
+				margin-top: 22px;
+			}
+		}
+
+		.btn {
+			line-height: 1.1;
+			margin-top: 44px;
+
+			@include r($md-breakpoint) {
+				margin-top: 34px;
+			}
+
+			@include r($xs-breakpoint) {
+				margin-top: 23px;
+				width: 100%;
+			}
+		}
+	}
+}

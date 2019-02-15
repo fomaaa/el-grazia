@@ -1,0 +1,38 @@
+.textarea,
+.input {
+	width: 100%;
+	background-color: #fff;
+	border: 0;
+	border-bottom: 2px solid $border-color;
+	font-family: inherit;
+	color: $black;
+	font-size: 16px;
+	font-weight: 300;
+	height: 50px;
+
+	@include r($xs-breakpoint) {
+		font-size: 14px;
+		height: 40px;
+	}
+
+	&::placeholder {
+		font-family: inherit;
+		color: #7f7f7f;
+	}
+
+	&:focus,
+	&:hover {
+		border-color: $primary-color;
+	}
+}
+
+.textarea {
+	resize: none;
+	padding: 15px 0;
+
+	@include r($xs-breakpoint) {
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 78px;
+	}
+}
