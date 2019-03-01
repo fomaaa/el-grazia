@@ -453,7 +453,7 @@ function load_more() {
 			$html .= '<div class="card card--good">';
 				$html .= '<a href="'. get_the_permalink() .'" class="card__link"></a>';
 				$html .= '<div class="card__photo">';
-				$html .= woocommerce_get_product_thumbnail('medium');
+				$html .= '<img src="'.get_the_post_thumbnail_url(get_the_ID(), 'medium'). '">';
 				$html .= '</div>';
 				$html .= '<div class="card__body">';
 				$html .= ' <div class="card__title">'. get_the_title() .'</div>';

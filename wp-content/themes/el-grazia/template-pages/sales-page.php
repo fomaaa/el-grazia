@@ -34,7 +34,7 @@
 		                  <div class="card__body">
 		                    <div class="card__title"><?php echo $item['text'] ?></div>
 		                    <a href="" class="btn btn--border">
-		                      <span>Подробнее</span>
+		                      <span>Подробнее о бренде</span>
 		                    </a>
 		                  </div>
 		                </div>
